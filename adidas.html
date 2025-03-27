@@ -1,187 +1,31 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-    <title>Adidas</title>
+    <title>ATHLETIX</title>
+    <link rel="icon" href="fav.jpeg" type="image/jpeg">
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;}
-        .header a:hover {
-            text-decoration: underline;}
-        .main-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000;
-            color: #fff;
-            padding: 20px;}
-        .main-content img {
-            max-width: 100%;
-            height: auto;}
-        .main-content .text-content {
-            max-width: 30%;}
-        .main-content .text-content h1 {
-            font-size: 3em;
-            margin: 0;}
-        .main-content .text-content p {
-            font-size: 1.2em;}
-        .main-content .text-content a {
-            display: inline-block;
-            margin: 10px 5px;
-            padding: 10px 20px;
-            background-color: #fff;
-            color: #000;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .main-content .text-content a:hover {
-            background-color: #ddd;
-        }
-                body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color:   #000000;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ccc;
-        }
-        .help-signup {
-            display: flex;
-            gap: 15px;
-            font-size: 0.9em;
-        }
-        .help-signup a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-        .help-signup a:hover {
-            text-decoration: underline;
-        }
-        .logo img {
-            height: 30px;
-        }
-        .nav-menu {
-            display: flex;
-            gap: 20px;
-        }
-        .nav-menu a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .search-bar {
-            display: flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        .search-bar input {
-            border: none;
-            outline: none;
-        }
-        .icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .notification {
-            position: relative;
-        }
-        .notification-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: yellow;
-            border-radius: 50%;
-            padding: 2px 5px;
-            font-size: 12px;
-        }
-        footer {
-            background-color: #000;
-            text-align: center;
-        }
-
-        .promo-banner {
-            background-color: #F7E146;
-            color: #000;
-            padding: 20px 0;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .promo-banner button {
-            background-color: #000;
-            color: #fff;
-            border: 2px solid #000;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            padding: 40px 10%;
-            text-align: left;
-            flex-wrap: wrap;
-            color: #ccc
-        }
-
-        .footer-column {
-            width: 15%;
-            color: #ccc
-        }
-
-        .footer-column h3 {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-column ul li {
-            font-size: 13px;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
-
-        .footer-column ul li:hover {
-            text-decoration: underline;
-        }
-
-        .footer-column.social {
-            text-align: left;
-        }
-
-        .footer-bottom {
-            background-color: #1a1a1a;
-            padding: 15px 0;
-            font-size: 12px;
-            color: #ccc;
-        }
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .header { background-color: #000; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .header a { color: #fff; text-decoration: none; margin: 0 10px; }
+        .header a:hover { text-decoration: underline; }
+        .main-content { display: flex; justify-content: space-between; align-items: center; background-color: #000; color: #fff; padding: 20px; }
+        .main-content img { max-width: 100%; height: auto; }
+        .main-content .text-content { max-width: 30%; }
+        .main-content .text-content h1 { font-size: 3em; margin: 0; }
+        .main-content .text-content p { font-size: 1.2em; }
+        .main-content .text-content a { display: inline-block; margin: 10px 5px; padding: 10px 20px; background-color: #fff; color: #000; text-decoration: none; border-radius: 5px; }
+        .main-content .text-content a:hover { background-color: #ddd; }
+        .help-signup { display: flex; gap: 15px; font-size: 0.9em; }
+        .help-signup a { text-decoration: none; color: #ffffff; }
+        .help-signup a:hover { text-decoration: underline; }
+        .logo img { height: 30px; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { text-decoration: none; color: #ffffff; font-weight: bold; }
+        .search-bar { display: flex; align-items: center; border: 1px solid #ccc; padding: 5px; border-radius: 5px; }
+        .search-bar input { border: none; outline: none; }
+        .icons { display: flex; align-items: center; gap: 15px; }
+        .notification { position: relative; }
+        .notification-badge { position: absolute; top: -5px; right: -5px; background-color: yellow; border-radius: 50%; padding: 2px 5px; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -206,15 +50,15 @@
     </div>
     <div class="search-bar">
         <input type="text" placeholder="Search">
-        <img src="search-icon.png" alt="Search">
+        <img src="glass.jpeg" width = "30px", height = "30px", alt="Search">
     </div>
     <div class="icons">
         <div class="notification">
-            <img src="user-icon.png" alt="User Icon">
+            <img src="user.jpeg", width = "30px", height = "30px", alt="User Icon">
             <div class="notification-badge">1</div>
         </div>
-        <img src="favorites-icon.png" alt="Favorites">
-        <img src="cart-icon.png" alt="Cart">
+        <img src="fave.jpeg" width = "30px", height = "30px" alt="Favorites">
+        <img src="cart.jpeg" width = "50px", height = "30px" alt="Cart">
     </div>
 </div>
    <div class="main-content">
