@@ -1,0 +1,20 @@
+# VS Code & system junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+*.ldb
+*.db
+
+# Brave/Browser junk (from earlier mess)
+AppData/
+Local/
+*.ico
+
+# Build folders (if using JS/Java)
+node_modules/
+build/
+dist/
