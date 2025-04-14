@@ -1,45 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adidas Clone</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Signup / Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 95%;
+      padding: 10px;
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #444;
+    }
+    .toggle-link {
+      margin-top: 10px;
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">ADIDAS</div>
-            <ul class="nav-links">
-                <li><a href="#men">Men</a></li>
-                <li><a href="#women">Women</a></li>
-                <li><a href="#kids">Kids</a></li>
-                <li><a href="#sale">Sale</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h1>Unleash Your Potential</h1>
-            <p>Discover the latest in sportswear</p>
-            <a href="#shop" class="cta">Shop Now</a>
-        </section>
-        <section id="products" class="products">
-            <div class="product">
-                <img src="shoe1.jpg" alt="Shoe 1">
-                <h2>UltraBoost 2024</h2>
-                <p>$180</p>
-            </div>
-            <div class="product">
-                <img src="shoe2.jpg" alt="Shoe 2">
-                <h2>Superstar Classic</h2>
-                <p>$90</p>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Adidas Clone. All Rights Reserved.</p>
-    </footer>
+
+  <div class="container" id="signup-form">
+    <h2>Sign Up</h2>
+    <input type="text" id="signup-name" placeholder="Full Name" required>
+    <input type="email" id="signup-email" placeholder="Email" required>
+    <input type="password" id="signup-password" placeholder="Password" required>
+    <button onclick="signUp()">Sign Up</button>
+    <div class="toggle-link" onclick="toggleForms()">Already have an account? Log In</div>
+  </div>
+
+  <div class="container" id="login-form" style="display:none;">
+    <h2>Log In</h2>
+    <input type="email" id="login-email" placeholder="Email" required>
+    <input type="password" id="login-password" placeholder="Password" required>
+    <button onclick="logIn()">Log In</button>
+    <div class="toggle-link" onclick="toggleForms()">Don't have an account? Sign Up</div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      document.getElementById("signup-form").style.display =
+        document.getElementById("signup-form").style.display === "none" ? "block" : "none";
+      document.getElementById("login-form").style.display =
+        document.getElementById("login-form").style.display === "none" ? "block" : "none";
+    }
+
+    function signUp() {
+      const name = document.getElementById("signup-name").value;
+      const email = document.getElementById("signup-email").value;
+      const password = document.getElementById("signup-password").value;
+
+      if (!name || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+
+      if (users.find(u => u.email === email)) {
+        alert("This email is already registered.");
+        return;
+      }
+
+      users.push({ name, email, password });
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("currentUser", email);
+      alert("Sign up successful!");
+      toggleForms();
+    }
+
+    function logIn() {
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        localStorage.setItem("currentUser", user.email);
+        alert("Login successful!");
+      } else {
+        alert("Invalid email or password.");
+      }
+    }
+  </script>
+
 </body>
 </html>
