@@ -1,45 +1,363 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adidas Clone</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Athletix - Kids</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .help-signup {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9em;
+        }
+
+        .help-signup a,
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .help-signup a:hover,
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .notification {
+            position: relative;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: yellow;
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin: 30px 0 10px 0;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px;
+            justify-items: center;
+        }
+
+        .product {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+        }
+
+        .product img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
+
+        .product a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .product a:hover {
+            background-color: #ddd;
+        }
+
+        footer {
+            background-color: #000;
+            text-align: center;
+        }
+
+        .promo-banner {
+            background-color: #F7E146;
+            color: #000;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .promo-banner button {
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 10%;
+            flex-wrap: wrap;
+            color: #ccc;
+            text-align: left;
+        }
+
+        .footer-column {
+            width: 15%;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            font-size: 13px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .footer-column ul li:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">ADIDAS</div>
-            <ul class="nav-links">
-                <li><a href="#men">Men</a></li>
-                <li><a href="#women">Women</a></li>
-                <li><a href="#kids">Kids</a></li>
-                <li><a href="#sale">Sale</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h1>Unleash Your Potential</h1>
-            <p>Discover the latest in sportswear</p>
-            <a href="#shop" class="cta">Shop Now</a>
-        </section>
-        <section id="products" class="products">
-            <div class="product">
-                <img src="shoe1.jpg" alt="Shoe 1">
-                <h2>UltraBoost 2024</h2>
-                <p>$180</p>
+    <div class="header">
+        <div class="help-signup">
+            <a href="#">Help</a>
+            <a href="#">Orders and Returns</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Log In</a>
+        </div>
+        <div class="logo">
+            <img src="fav.jpeg" alt="Athletix">
+        </div>
+        <div class="nav-menu">
+            <a href="#">Shoes</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Sports</a>
+            <a href="#">Lifestyle</a>
+            <a href="#">Outlet</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <img src="search-icon.png" alt="Search">
+        </div>
+        <div class="icons">
+            <div class="notification">
+                <img src="user-icon.png" alt="User Icon">
+                <div class="notification-badge">1</div>
             </div>
-            <div class="product">
-                <img src="shoe2.jpg" alt="Shoe 2">
-                <h2>Superstar Classic</h2>
-                <p>$90</p>
-            </div>
-        </section>
-    </main>
+            <img src="favorites-icon.png" alt="Favorites">
+            <img src="cart-icon.png" alt="Cart">
+        </div>
+    </div>
+
+    <div class="section-title">Kids’ Collection</div>
+    <div class="products-container">
+        <div class="product">
+            <img src="kids1.jpg" alt="Product 1">
+            <h3>Kid's Sneakers</h3>
+            <p>₹1,999</p>
+            <a href="#">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="kids2.jpg" alt="Product 2">
+            <h3>Graphic Tee</h3>
+            <p>₹799</p>
+            <a href="#">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="kids3.jpg" alt="Product 3">
+            <h3>Play Shorts</h3>
+            <p>₹899</p>
+            <a href="#">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="kids4.jpg" alt="Product 4">
+            <h3>Colorblock Hoodie</h3>
+            <p>₹1,299</p>
+            <a href="#">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="kids5.jpg" alt="Product 5">
+            <h3>Sport Sandals</h3>
+            <p>₹1,499</p>
+            <a href="#">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="kids6.jpg" alt="Product 6">
+            <h3>Printed Leggings</h3>
+            <p>₹999</p>
+            <a href="#">Buy Now</a>
+        </div>
+	<div class="product">
+    <img src="kids7.jpg" alt="Product 7">
+    <h3>Kid's Joggers</h3>
+    <p>₹1,199</p>
+    <a href="#">Buy Now</a>
+</div>
+<div class="product">
+    <img src="kids8.jpg" alt="Product 8">
+    <h3>Lightweight Cap</h3>
+    <p>₹499</p>
+    <a href="#">Buy Now</a>
+</div>
+<div class="product">
+    <img src="kids9.jpg" alt="Product 9">
+    <h3>Rain Jacket</h3>
+    <p>₹1,799</p>
+    <a href="#">Buy Now</a>
+</div>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Adidas Clone. All Rights Reserved.</p>
+        <div class="promo-banner">
+            <p>JOIN Athletix AND GET 10% OFF</p>
+            <button>Sign Up for Free →</button>
+        </div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>PRODUCTS</h3>
+                <ul>
+                    <li>Footwear</li>
+                    <li>Clothing</li>
+                    <li>Accessories</li>
+                    <li>Outlet-Sale</li>
+                    <li>New Arrivals</li>
+                    <li>Flat 50% Off!</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SPORTS</h3>
+                <ul>
+                    <li>Cricket</li>
+                    <li>Running</li>
+                    <li>Football</li>
+                    <li>Gym/Training</li>
+                    <li>Tennis</li>
+                    <li>Outdoor</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>COLLECTIONS</h3>
+                <ul>
+                    <li>Ultraboost</li>
+                    <li>Superstar</li>
+                    <li>NMD</li>
+                    <li>Stan Smith</li>
+                    <li>Predator</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li>Help</li>
+                    <li>Customer Service</li>
+                    <li>Returns & Exchanges</li>
+                    <li>Shipping</li>
+                    <li>Order Tracker</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>COMPANY INFO</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Athletix Apps</li>
+                    <li>Entity Details</li>
+                    <li>Press</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h3>FOLLOW US</h3>
+                <p>📷 Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Privacy Policy | Terms and Conditions | Cookies</p>
+            <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
+        </div>
     </footer>
 </body>
+
 </html>
