@@ -1,115 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .signup-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 320px;
-            text-align: center;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-        }
-        .signup-container h2 {
-            margin-bottom: 20px;
-        }
-        .signup-container .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-        .signup-container form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .signup-container input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .signup-container button {
-            width: calc(100% - 20px);
-            padding: 10px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .signup-container button:hover {
-            background: #0056b3;
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Signup / Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 95%;
+      padding: 10px;
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #444;
+    }
+    .toggle-link {
+      margin-top: 10px;
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <button onclick="openSignup()">Sign Up</button>
-    
-    <div class="overlay" id="overlay" onclick="closeSignup()"></div>
-    
-    <div class="signup-container" id="signup-container">
-        <button class="close-btn" onclick="closeSignup()">x</button>
-        <h2>Sign Up</h2>
-        <form id="signup-form">
-            <input type="text" id="name" placeholder="Full Name" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
-    
-    <script>
-        function openSignup() {
-            document.getElementById("signup-container").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
-        }
-        
-        function closeSignup() {
-            document.getElementById("signup-container").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-        }
-        
-        document.getElementById("signup-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            alert(`Sign Up Successful!\nName: ${name}\nEmail: ${email}`);
-            closeSignup();
-        });
-    </script>
+
+  <div class="container" id="signup-form">
+    <h2>Sign Up</h2>
+    <input type="text" id="signup-name" placeholder="Full Name" required>
+    <input type="email" id="signup-email" placeholder="Email" required>
+    <input type="password" id="signup-password" placeholder="Password" required>
+    <button onclick="signUp()">Sign Up</button>
+    <div class="toggle-link" onclick="toggleForms()">Already have an account? Log In</div>
+  </div>
+
+  <div class="container" id="login-form" style="display:none;">
+    <h2>Log In</h2>
+    <input type="email" id="login-email" placeholder="Email" required>
+    <input type="password" id="login-password" placeholder="Password" required>
+    <button onclick="logIn()">Log In</button>
+    <div class="toggle-link" onclick="toggleForms()">Don't have an account? Sign Up</div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      document.getElementById("signup-form").style.display =
+        document.getElementById("signup-form").style.display === "none" ? "block" : "none";
+      document.getElementById("login-form").style.display =
+        document.getElementById("login-form").style.display === "none" ? "block" : "none";
+    }
+
+    function signUp() {
+      const name = document.getElementById("signup-name").value;
+      const email = document.getElementById("signup-email").value;
+      const password = document.getElementById("signup-password").value;
+
+      if (!name || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+
+      if (users.find(u => u.email === email)) {
+        alert("This email is already registered.");
+        return;
+      }
+
+      users.push({ name, email, password });
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("currentUser", email);
+      alert("Sign up successful!");
+      toggleForms();
+    }
+
+    function logIn() {
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        localStorage.setItem("currentUser", user.email);
+        alert("Login successful!");
+      } else {
+        alert("Invalid email or password.");
+      }
+    }
+  </script>
+
 </body>
 </html>
