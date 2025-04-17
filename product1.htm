@@ -1,352 +1,516 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Men's Running Shoes - Athletix</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mens's Running Shoes</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
 
-        .header {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
+    .header {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .header a:hover {
+        text-decoration: underline;
+    } 
+
+    .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #000000;
+            padding: 10px 20px;
             border-bottom: 1px solid #ccc;
         }
 
-        .help-signup {
-            display: flex;
-            gap: 15px;
-            font-size: 0.9em;
-        }
+    .notification {
+        position: relative;
+    }
 
-        .help-signup a {
-            text-decoration: none;
-            color: #ffffff;
-        }
+    .notification-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: yellow;
+        border-radius: 50%;
+        padding: 2px 5px;
+        font-size: 12px;
+    }
 
-        .help-signup a:hover {
-            text-decoration: underline;
-        }
+    .help-signup {
+        display: flex;
+        gap: 15px;
+        font-size: 0.9em;
+    }
 
-        .logo img {
-            height: 30px;
-        }
+    .help-signup a {
+        text-decoration: none;
+        color: #ffffff;
+    }
 
-        .nav-menu {
-            display: flex;
-            gap: 20px;
-        }
+    .help-signup a:hover {
+        text-decoration: underline;
+    }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-        }
+    .logo img {
+        height: 30px;
+    }
 
-        .search-bar {
-            display: flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            padding: 5px;
-            border-radius: 5px;
-        }
+    .nav-menu {
+        display: flex;
+        gap: 20px;
+    }
 
-        .search-bar input {
-            border: none;
-            outline: none;
-        }
+    .nav-menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+    }
 
-        .icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+    .search-bar {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 5px;
+    }
 
-        .notification {
-            position: relative;
-        }
+    .search-bar input {
+        border: none;
+        outline: none;
+    }
 
-        .notification-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: yellow;
-            border-radius: 50%;
-            padding: 2px 5px;
-            font-size: 12px;
-        }
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-        .main {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 40px;
-            gap: 40px;
-            background-color: #fff;
-            color: #000;
-        }
+    .notification {
+        position: relative;
+    }
 
-        .product-image {
-            flex: 1;
-            min-width: 300px;
-        }
+    .notification-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: yellow;
+        border-radius: 50%;
+        padding: 2px 5px;
+        font-size: 12px;
+    }
 
-        .product-image img {
-            width: 100%;
-            border-radius: 10px;
-        }
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      background: white ;
+      padding: 40px 5%;
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .product-details {
-            flex: 1;
-            min-width: 300px;
-        }
+    .back-btn {
+      margin-bottom: 20px;
+      background: #eee;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        .product-details h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
 
-        .product-details p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
+    .product-images {
+      flex: 1;
+      min-width: 300px;
+    }
 
-        .price {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin: 20px 0;
-        }
+    .product-details {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+    }
 
-        .buttons {
-            margin-top: 30px;
-        }
+    .main-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
 
-        .buttons button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            margin-right: 20px;
-        }
+    .main-image:hover {
+      transform: scale(1.02);
+    }
 
-        .buy-now {
-            background-color: #F7E146;
-            color: #000;
-        }
+    .thumbnail-container {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
 
-        .buy-now:hover {
-            background-color: #e6d02d;
-        }
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
 
-        .add-to-cart {
-            background-color: #000;
-            color: #fff;
-            border: 2px solid #000;
-        }
+    .thumbnail:hover {
+      border-color: #0056b3;
+    }
 
-        .add-to-cart:hover {
-            background-color: #333;
-        }
+    .thumbnail.active {
+      border-color: #0056b3;
+    }
 
-        footer {
-            background-color: #000;
-            text-align: center;
-        }
+    h1, h2 {
+      margin: 15px 0;
+    }
 
-        .promo-banner {
-            background-color: #F7E146;
-            color: #000;
-            padding: 20px 0;
-            font-size: 18px;
-            font-weight: bold;
-        }
+    .size-selector {
+      margin: 30px 0;
+    }
 
-        .promo-banner button {
-            background-color: #000;
-            color: #fff;
-            border: 2px solid #000;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
+    .size-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            padding: 40px 10%;
-            text-align: left;
-            flex-wrap: wrap;
-            color: #ccc;
-        }
+    .size-option {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-        .footer-column {
-            width: 15%;
-        }
+    .size-option:hover {
+      border-color: #0056b3;
+    }
 
-        .footer-column h3 {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+    .size-option.selected {
+      background-color: #0056b3;
+      color: white;
+      border-color: #0056b3;
+    }
 
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
+    .add-to-bag-container {
+      margin-top: 30px;
+    }
 
-        .footer-column ul li {
-            font-size: 13px;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
+    button.add-to-bag {
+      width: 200px;
+      padding: 15px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-        .footer-column ul li:hover {
-            text-decoration: underline;
-        }
+    button.add-to-bag:hover {
+      background: #0056b3;
+    }
 
-        .footer-column.social {
-            text-align: left;
-        }
+    .reviews {
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
 
-        .footer-bottom {
-            background-color: #1a1a1a;
-            padding: 15px 0;
-            font-size: 12px;
-            color: #ccc;
-        }
-    </style>
+    .review {
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      margin-top: 50px;
+    }
+
+    .promo-banner {
+      background-color: #F7E146;
+      color: #000;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .promo-banner button {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #000;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 5%;
+    }
+
+    .footer-column {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      font-size: 13px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .footer-column ul li:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 12px;
+    }
+
+  </style>
 </head>
-
 <body>
-    <div class="header">
-        <div class="help-signup">
-            <a href="#">Help</a>
-            <a href="#">Orders and Returns</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Log In</a>
-        </div>
-        <div class="logo">
-            <img src="fav.jpeg" alt="Athletix">
-        </div>
-        <div class="nav-menu">
-            <a href="#">Shoes</a>
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="#">Sports</a>
-            <a href="#">Lifestyle</a>
-            <a href="#">Outlet</a>
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <img src="search-icon.png" alt="Search">
-        </div>
-        <div class="icons">
-            <div class="notification">
-                <img src="user-icon.png" alt="User Icon">
-                <div class="notification-badge">1</div>
-            </div>
-            <img src="favorites-icon.png" alt="Favorites">
-            <img src="cart-icon.png" alt="Cart">
-        </div>
+  <div class="header">
+    <div class="help-signup">
+        <a href="#">Help</a>
+        <a href="#">Orders and Returns</a>
+        <a href="#">Log In</a>
     </div>
-
-    <div class="main">
-        <div class="product-image">
-            <img src="run.jpeg" alt="Men's Running Shoes">
+    <div class="logo">
+        <img src="fav.jpeg" alt="Athletix">
+    </div>
+    <div class="nav-menu">
+        <a href="#">Shoes</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Sports</a>
+        <a href="#">Lifestyle</a>
+        <a href="#">Outlet</a>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <img src="search-icon.png" alt="Search">
+    </div>
+    <div class="icons">
+        <div class="notification">
+            <img src="user-icon.png" alt="User Icon">
+            <div class="notification-badge">1</div>
         </div>
-        <div class="product-details">
-            <h1>Men's Running Shoes</h1>
-            <p>High-performance running shoes designed for comfort and endurance. Engineered with breathable mesh and a durable rubber outsole, these shoes help reduce impact and provide superior grip.</p>
-            <div class="price">₹6,499</div>
-            <p><strong>Key Features:</strong></p>
+        <img src="favorites-icon.png" alt="Favorites">
+        <img src="cart-icon.png" alt="Cart">
+    </div>
+  </div>
+
+  <div class="container">
+    <button class="back-btn" onclick="history.back()">← Back to Catalogue</button>
+
+    <div class="product-container">
+      <div class="product-images">
+        <img id="mainImage" class="main-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/150f9dc7-ea08-4d8b-b69d-37ce2bbd8719/pegasus-40-mens-road-running-shoes-DGqT3X.png" alt="Men's Running Shoes" />
+        
+        <div class="thumbnail-container">
+          <img class="thumbnail active" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/150f9dc7-ea08-4d8b-b69d-37ce2bbd8719/pegasus-40-mens-road-running-shoes-DGqT3X.png" onclick="changeImage(this)" alt="Front View">
+          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9aeecc8f-187e-4016-a2db-e1ec9ad8b9b1/pegasus-40-mens-road-running-shoes-DGqT3X.png" onclick="changeImage(this)" alt="Side View">
+          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/ffb3a7cc-62b2-47c6-8f5a-3f53b17d3566/pegasus-40-mens-road-running-shoes-DGqT3X.png" onclick="changeImage(this)" alt="Top View">
+        </div>
+      </div>
+
+      <div class="product-details">
+        <h1>Men's Running Shoes</h1>
+        <h2>₹6,499</h2>
+
+        <p><strong>Description:</strong> Experience responsive cushioning and smooth transitions . Perfect for daily runs, the breathable mesh upper and Zoom Air units offer performance and comfort in every stride.</p>
+
+        <div class="size-selector">
+          <strong>Select Size:</strong>
+          <div class="size-options">
+            <div class="size-option" onclick="selectSize(this)">7</div>
+            <div class="size-option" onclick="selectSize(this)">8</div>
+            <div class="size-option" onclick="selectSize(this)">9</div>
+            <div class="size-option" onclick="selectSize(this)">10</div>
+            <div class="size-option" onclick="selectSize(this)">11</div>
+            <div class="size-option" onclick="selectSize(this)">12</div>
+          </div>
+        </div>
+
+        <div class="add-to-bag-container">
+          <button class="add-to-bag" onclick="addToCart()">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+   <div class="promo-banner">
+        <p>JOIN Athletix AND GET 10% OFF</p>
+        <button>Sign Up for Free →</button>
+    </div>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>PRODUCTS</h3>
             <ul>
-                <li>Lightweight, breathable upper</li>
-                <li>Responsive cushioning</li>
-                <li>Durable rubber outsole for traction</li>
-                <li>Available sizes: 6 - 12</li>
+                <li>Footwear</li>
+                <li>Clothing</li>
+                <li>Accessories</li>
+                <li>Outlet-Sale</li>
+                <li>New Arrivals</li>
+                <li>Flat 50% Off!</li>
             </ul>
-            <div class="buttons">
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
+        </div>
+        <div class="footer-column">
+            <h3>SPORTS</h3>
+            <ul>
+                <li>Running</li>
+                <li>Basketball</li>
+                <li>Football</li>
+                <li>Gym/Training</li>
+                <li>Tennis</li>
+                <li>Golf</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>COLLECTIONS</h3>
+            <ul>
+                <li>Air Max</li>
+                <li>Air Force</li>
+                <li>Air Jordan</li>
+                <li>Dunk</li>
+                <li>React</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>SUPPORT</h3>
+            <ul>
+                <li>Help</li>
+                <li>Customer Service</li>
+                <li>Returns & Exchanges</li>
+                <li>Shipping</li>
+                <li>Order Tracker</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>COMPANY INFO</h3>
+            <ul>
+                <li>About Us</li>
+                <li>Athletix Apps</li>
+                <li>Entity Details</li>
+                <li>Press</li>
+                <li>Careers</li>
+            </ul>
+        </div>
+        <div class="footer-column social">
+            <h3>FOLLOW US</h3>
+            <p>📷 Instagram</p>
+            <p>🐦 Twitter</p>
         </div>
     </div>
+    <div class="footer-bottom">
+        <p>Privacy Policy | Terms and Conditions | Cookies</p>
+        <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="promo-banner">
-            <p>JOIN Athletix AND GET 10% OFF</p>
-            <button>Sign Up for Free →</button>
-        </div>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>PRODUCTS</h3>
-                <ul>
-                    <li>Footwear</li>
-                    <li>Clothing</li>
-                    <li>Accessories</li>
-                    <li>Outlet-Sale</li>
-                    <li>New Arrivals</li>
-                    <li>Flat 50% Off!</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>SPORTS</h3>
-                <ul>
-                    <li>Cricket</li>
-                    <li>Running</li>
-                    <li>Football</li>
-                    <li>Gym/Training</li>
-                    <li>Tennis</li>
-                    <li>Outdoor</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>COLLECTIONS</h3>
-                <ul>
-                    <li>Ultraboost</li>
-                    <li>Superstar</li>
-                    <li>NMD</li>
-                    <li>Stan Smith</li>
-                    <li>Predator</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>SUPPORT</h3>
-                <ul>
-                    <li>Help</li>
-                    <li>Customer Service</li>
-                    <li>Returns & Exchanges</li>
-                    <li>Shipping</li>
-                    <li>Order Tracker</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>COMPANY INFO</h3>
-                <ul>
-                    <li>About Us</li>
-                    <li>Athletix Apps</li>
-                    <li>Entity Details</li>
-                    <li>Press</li>
-                    <li>Careers</li>
-                </ul>
-            </div>
-            <div class="footer-column social">
-                <h3>FOLLOW US</h3>
-                <p>📷 Instagram</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Privacy Policy | Terms and Conditions | Cookies</p>
-            <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
-        </div>
-    </footer>
+  <script>
+    let selectedSize = null;
+
+    function changeImage(element) {
+      // Update main image
+      document.getElementById('mainImage').src = element.src;
+      
+      // Update active thumbnail
+      document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.classList.remove('active');
+      });
+      element.classList.add('active');
+    }
+
+    function selectSize(element) {
+      // Update selected size
+      document.querySelectorAll('.size-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      element.classList.add('selected');
+      selectedSize = element.textContent;
+    }
+
+    function addToCart() {
+      if (!selectedSize) {
+        alert('Please select a size before adding to bag!');
+        return;
+      }
+
+      const product = {
+        id: 2,
+        name: "Nike Air Max 270",
+        price: 9995,
+        size: selectedSize,
+        quantity: 1,
+        image: document.getElementById('mainImage').src
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`Added to bag: ₹{product.name} (Size ₹{selectedSize})`);
+    }
+  </script>
 </body>
 </html>
