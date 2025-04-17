@@ -1,99 +1,468 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Slip-ons - Athletix</title>
-    <style>
-        /* same CSS from product1.htm */
-        body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        .header { background-color: #000; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; }
-        .help-signup { display: flex; gap: 15px; font-size: 0.9em; }
-        .help-signup a { text-decoration: none; color: #ffffff; }
-        .help-signup a:hover { text-decoration: underline; }
-        .logo img { height: 30px; }
-        .nav-menu { display: flex; gap: 20px; }
-        .nav-menu a { text-decoration: none; color: #ffffff; font-weight: bold; }
-        .search-bar { display: flex; align-items: center; border: 1px solid #ccc; padding: 5px; border-radius: 5px; }
-        .search-bar input { border: none; outline: none; }
-        .icons { display: flex; align-items: center; gap: 15px; }
-        .notification { position: relative; }
-        .notification-badge { position: absolute; top: -5px; right: -5px; background-color: yellow; border-radius: 50%; padding: 2px 5px; font-size: 12px; }
-        .main { display: flex; flex-wrap: wrap; padding: 40px; gap: 40px; background-color: #fff; color: #000; }
-        .product-image { flex: 1; min-width: 300px; }
-        .product-image img { width: 100%; border-radius: 10px; }
-        .product-details { flex: 1; min-width: 300px; }
-        .product-details h1 { font-size: 2em; margin-bottom: 20px; }
-        .product-details p { margin-bottom: 15px; line-height: 1.6; }
-        .price { font-size: 1.8em; font-weight: bold; margin: 20px 0; }
-        .buttons { margin-top: 30px; }
-        .buttons button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; margin-right: 20px; }
-        .buy-now { background-color: #F7E146; color: #000; }
-        .buy-now:hover { background-color: #e6d02d; }
-        .add-to-cart { background-color: #000; color: #fff; border: 2px solid #000; }
-        .add-to-cart:hover { background-color: #333; }
-        footer { background-color: #000; text-align: center; }
-        .promo-banner { background-color: #F7E146; color: #000; padding: 20px 0; font-size: 18px; font-weight: bold; }
-        .promo-banner button { background-color: #000; color: #fff; border: 2px solid #000; padding: 10px 20px; cursor: pointer; font-size: 16px; font-weight: bold; }
-        .footer-content { display: flex; justify-content: space-around; padding: 40px 10%; text-align: left; flex-wrap: wrap; color: #ccc; }
-        .footer-column { width: 15%; }
-        .footer-column h3 { font-size: 14px; font-weight: bold; margin-bottom: 15px; }
-        .footer-column ul { list-style: none; padding: 0; }
-        .footer-column ul li { font-size: 13px; margin-bottom: 8px; cursor: pointer; }
-        .footer-column ul li:hover { text-decoration: underline; }
-        .footer-column.social { text-align: left; }
-        .footer-bottom { background-color: #1a1a1a; padding: 15px 0; font-size: 12px; color: #ccc; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gym Trainers</title>
+  <style>
+     html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+
+    .header {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .header a:hover {
+        text-decoration: underline;
+    } 
+
+    .logo img {
+        height: 30px;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .search-bar input {
+        border: none;
+        outline: none;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .notification {
+        position: relative;
+    }
+
+    .notification-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: yellow;
+        border-radius: 50%;
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      background: white ;
+      padding: 40px 5%;
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-btn {
+      margin-bottom: 20px;
+      background: #eee;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .product-images {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-details {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .main-image:hover {
+      transform: scale(1.02);
+    }
+
+    .thumbnail-container {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .thumbnail:hover {
+      border-color: #0056b3;
+    }
+
+    .thumbnail.active {
+      border-color: #0056b3;
+    }
+
+    h1, h2 {
+      margin: 15px 0;
+    }
+
+    .size-selector {
+      margin: 30px 0;
+    }
+
+    .size-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .size-option {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .size-option:hover {
+      border-color: #0056b3;
+    }
+
+    .size-option.selected {
+      background-color: #0056b3;
+      color: white;
+      border-color: #0056b3;
+    }
+
+    .add-to-bag-container {
+      margin-top: 30px;
+    }
+
+    button.add-to-bag {
+      width: 200px;
+      padding: 15px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button.add-to-bag:hover {
+      background: #0056b3;
+    }
+
+    .reviews {
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
+
+    .review {
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      margin-top: 50px;
+    }
+
+    .promo-banner {
+      background-color: #F7E146;
+      color: #000;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .promo-banner button {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #000;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 5%;
+    }
+
+    .footer-column {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      font-size: 13px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .footer-column ul li:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 12px;
+    }
+
+  </style>
 </head>
 <body>
-    <div class="header">
-        <div class="help-signup">
-            <a href="#">Help</a>
-            <a href="#">Orders and Returns</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Log In</a>
-        </div>
-        <div class="logo"><img src="fav.jpeg" alt="Athletix"></div>
-        <div class="nav-menu">
-            <a href="#">Shoes</a><a href="#">Men</a><a href="#">Women</a><a href="#">Kids</a><a href="#">Sports</a><a href="#">Lifestyle</a><a href="#">Outlet</a>
-        </div>
-        <div class="search-bar"><input type="text" placeholder="Search"><img src="search-icon.png" alt="Search"></div>
-        <div class="icons">
-            <div class="notification"><img src="user-icon.png" alt="User Icon"><div class="notification-badge">1</div></div>
-            <img src="favorites-icon.png" alt="Favorites">
-            <img src="cart-icon.png" alt="Cart">
-        </div>
+  <div class="header">
+    <div class="logo">
+      <img src="fav.jpeg" alt="Athletix">
     </div>
-    <div class="main">
-        <div class="product-image">
-            <img src="product7.jpg" alt="Men's Slip-ons">
-        </div>
-        <div class="product-details">
-            <h1>Men's Slip-ons</h1>
-            <p>Convenient and stylish slip-on shoes for casual outings.</p>
-            <div class="price">₹2,799</div>
-            <ul>
-                <li>Lightweight, breathable upper</li>
-                <li>Responsive cushioning</li>
-                <li>Durable rubber outsole for traction</li>
-                <li>Available sizes: 6 - 12</li>
-            </ul>
-            <div class="buttons">
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        </div>
+    <div class="nav-menu">
+      <a href="#">Shoes</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="#">Sports</a>
+      <a href="#">Lifestyle</a>
+      <a href="#">Outlet</a>
     </div>
-    <footer>
-        <div class="promo-banner"><p>JOIN Athletix AND GET 10% OFF</p><button>Sign Up for Free →</button></div>
-        <div class="footer-content">
-            <div class="footer-column"><h3>PRODUCTS</h3><ul><li>Footwear</li><li>Clothing</li><li>Accessories</li><li>Outlet-Sale</li><li>New Arrivals</li><li>Flat 50% Off!</li></ul></div>
-            <div class="footer-column"><h3>SPORTS</h3><ul><li>Cricket</li><li>Running</li><li>Football</li><li>Gym/Training</li><li>Tennis</li><li>Outdoor</li></ul></div>
-            <div class="footer-column"><h3>COLLECTIONS</h3><ul><li>Ultraboost</li><li>Superstar</li><li>NMD</li><li>Stan Smith</li><li>Predator</li></ul></div>
-            <div class="footer-column"><h3>SUPPORT</h3><ul><li>Help</li><li>Customer Service</li><li>Returns & Exchanges</li><li>Shipping</li><li>Order Tracker</li></ul></div>
-            <div class="footer-column"><h3>COMPANY INFO</h3><ul><li>About Us</li><li>Athletix Apps</li><li>Entity Details</li><li>Press</li><li>Careers</li></ul></div>
-            <div class="footer-column social"><h3>FOLLOW US</h3><p>📷 Instagram</p></div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search">
+      <img src="search-icon.png" alt="Search">
+    </div>
+    <div class="icons">
+      <div class="notification">
+        <img src="user-icon.png" alt="User Icon">
+        <div class="notification-badge">1</div>
+      </div>
+      <img src="favorites-icon.png" alt="Favorites">
+      <img src="cart-icon.png" alt="Cart">
+    </div>
+  </div>
+
+  <div class="container">
+    <button class="back-btn" onclick="history.back()">← Back to Catalogue</button>
+
+    <div class="product-container">
+      <div class="product-images">
+        <img id="mainImage" class="main-image" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/d69e0e42-cfb0-4c13-81ff-4c961bfe5ebf/benassi-jdi-mens-slides-KyTVvF.png" alt="Gym Trainers" />
+        
+        <div class="thumbnail-container">
+          <img class="thumbnail active" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/d69e0e42-cfb0-4c13-81ff-4c961bfe5ebf/benassi-jdi-mens-slides-KyTVvF.png" onclick="changeImage(this)" alt="Angle 1">
+          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/3c05bb97-6e6c-4c1e-b1fc-bdd6ff0996d4/benassi-jdi-mens-slides-KyTVvF.png" onclick="changeImage(this)" alt="Angle 2">
+          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/34d9e07e-7f3c-441e-938a-93098246e560/benassi-jdi-mens-slides-KyTVvF.png" onclick="changeImage(this)" alt="Angle 3">
         </div>
-        <div class="footer-bottom"><p>Privacy Policy | Terms and Conditions | Cookies</p><p>©2025 ATHLETIX India Marketing Pvt. Ltd</p></div>
-    </footer>
+      </div>
+
+      <div class="product-details">
+        <h1>Gym Trainers</h1>
+        <h2>₹4,299</h2>
+
+        <p><strong>Description:</strong> These gym trainers are perfect for your workouts, providing both comfort and performance. With a sleek design and durable construction, they offer great support for all types of training.</p>
+
+        <div class="size-selector">
+          <strong>Select Size:</strong>
+          <div class="size-options">
+            <div class="size-option" onclick="selectSize(this)">6</div>
+            <div class="size-option" onclick="selectSize(this)">7</div>
+            <div class="size-option" onclick="selectSize(this)">8</div>
+            <div class="size-option" onclick="selectSize(this)">9</div>
+            <div class="size-option" onclick="selectSize(this)">10</div>
+          </div>
+        </div>
+
+        <div class="add-to-bag-container">
+          <button class="add-to-bag" onclick="addToCart()">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="promo-banner">
+      <p>JOIN Athletix AND GET 10% OFF</p>
+      <button>Sign Up for Free →</button>
+    </div>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>PRODUCTS</h3>
+        <ul>
+          <li>Footwear</li>
+          <li>Clothing</li>
+          <li>Accessories</li>
+          <li>Outlet-Sale</li>
+          <li>New Arrivals</li>
+          <li>Flat 50% Off!</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SPORTS</h3>
+        <ul>
+          <li>Running</li>
+          <li>Basketball</li>
+          <li>Football</li>
+          <li>Gym/Training</li>
+          <li>Tennis</li>
+          <li>Golf</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>COLLECTIONS</h3>
+        <ul>
+          <li>Air Max</li>
+          <li>Air Force</li>
+          <li>Air Jordan</li>
+          <li>Dunk</li>
+          <li>React</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SUPPORT</h3>
+        <ul>
+          <li>Help</li>
+          <li>Customer Service</li>
+          <li>Returns & Exchanges</li>
+          <li>Shipping</li>
+          <li>Order Tracker</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>COMPANY INFO</h3>
+        <ul>
+          <li>About Us</li>
+          <li>Athletix Apps</li>
+          <li>Entity Details</li>
+          <li>Press</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+      <div class="footer-column social">
+        <h3>FOLLOW US</h3>
+        <p>📷 Instagram</p>
+        <p>🐦 Twitter</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Privacy Policy | Terms and Conditions | Cookies</p>
+      <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
+    </div>
+  </footer>
+
+  <script>
+    let selectedSize = null;
+
+    function changeImage(element) {
+      document.getElementById('mainImage').src = element.src;
+      document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.classList.remove('active');
+      });
+      element.classList.add('active');
+    }
+
+    function selectSize(element) {
+      document.querySelectorAll('.size-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      element.classList.add('selected');
+      selectedSize = element.textContent;
+    }
+
+    function addToCart() {
+      if (!selectedSize) {
+        alert('Please select a size before adding to bag!');
+        return;
+      }
+
+      const product = {
+        id: 7,
+        name: "Gym Trainers",
+        price: 4299,
+        size: selectedSize,
+        quantity: 1,
+        image: document.getElementById('mainImage').src
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`Added to bag: ${product.name} (Size ${selectedSize})`);
+    }
+  </script>
 </body>
 </html>
