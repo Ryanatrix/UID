@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basketball Shoes - Athletix</title>
+    <style>
+        /* same CSS from product1.htm */
+        body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .header { background-color: #000; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; }
+        .help-signup { display: flex; gap: 15px; font-size: 0.9em; }
+        .help-signup a { text-decoration: none; color: #ffffff; }
+        .help-signup a:hover { text-decoration: underline; }
+        .logo img { height: 30px; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { text-decoration: none; color: #ffffff; font-weight: bold; }
+        .search-bar { display: flex; align-items: center; border: 1px solid #ccc; padding: 5px; border-radius: 5px; }
+        .search-bar input { border: none; outline: none; }
+        .icons { display: flex; align-items: center; gap: 15px; }
+        .notification { position: relative; }
+        .notification-badge { position: absolute; top: -5px; right: -5px; background-color: yellow; border-radius: 50%; padding: 2px 5px; font-size: 12px; }
+        .main { display: flex; flex-wrap: wrap; padding: 40px; gap: 40px; background-color: #fff; color: #000; }
+        .product-image { flex: 1; min-width: 300px; }
+        .product-image img { width: 100%; border-radius: 10px; }
+        .product-details { flex: 1; min-width: 300px; }
+        .product-details h1 { font-size: 2em; margin-bottom: 20px; }
+        .product-details p { margin-bottom: 15px; line-height: 1.6; }
+        .price { font-size: 1.8em; font-weight: bold; margin: 20px 0; }
+        .buttons { margin-top: 30px; }
+        .buttons button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; margin-right: 20px; }
+        .buy-now { background-color: #F7E146; color: #000; }
+        .buy-now:hover { background-color: #e6d02d; }
+        .add-to-cart { background-color: #000; color: #fff; border: 2px solid #000; }
+        .add-to-cart:hover { background-color: #333; }
+        footer { background-color: #000; text-align: center; }
+        .promo-banner { background-color: #F7E146; color: #000; padding: 20px 0; font-size: 18px; font-weight: bold; }
+        .promo-banner button { background-color: #000; color: #fff; border: 2px solid #000; padding: 10px 20px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        .footer-content { display: flex; justify-content: space-around; padding: 40px 10%; text-align: left; flex-wrap: wrap; color: #ccc; }
+        .footer-column { width: 15%; }
+        .footer-column h3 { font-size: 14px; font-weight: bold; margin-bottom: 15px; }
+        .footer-column ul { list-style: none; padding: 0; }
+        .footer-column ul li { font-size: 13px; margin-bottom: 8px; cursor: pointer; }
+        .footer-column ul li:hover { text-decoration: underline; }
+        .footer-column.social { text-align: left; }
+        .footer-bottom { background-color: #1a1a1a; padding: 15px 0; font-size: 12px; color: #ccc; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="help-signup">
+            <a href="#">Help</a>
+            <a href="#">Orders and Returns</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Log In</a>
+        </div>
+        <div class="logo"><img src="fav.jpeg" alt="Athletix"></div>
+        <div class="nav-menu">
+            <a href="#">Shoes</a><a href="#">Men</a><a href="#">Women</a><a href="#">Kids</a><a href="#">Sports</a><a href="#">Lifestyle</a><a href="#">Outlet</a>
+        </div>
+        <div class="search-bar"><input type="text" placeholder="Search"><img src="search-icon.png" alt="Search"></div>
+        <div class="icons">
+            <div class="notification"><img src="user-icon.png" alt="User Icon"><div class="notification-badge">1</div></div>
+            <img src="favorites-icon.png" alt="Favorites">
+            <img src="cart-icon.png" alt="Cart">
+        </div>
+    </div>
+    <div class="main">
+        <div class="product-image">
+            <img src="product3.jpg" alt="Men's Basketball Shoes">
+        </div>
+        <div class="product-details">
+            <h1>Men's Basketball Shoes</h1>
+            <p>Built for court performance with extra ankle support.</p>
+            <div class="price">₹7,499</div>
+            <ul>
+                <li>Lightweight, breathable upper</li>
+                <li>Responsive cushioning</li>
+                <li>Durable rubber outsole for traction</li>
+                <li>Available sizes: 6 - 12</li>
+            </ul>
+            <div class="buttons">
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="promo-banner"><p>JOIN Athletix AND GET 10% OFF</p><button>Sign Up for Free →</button></div>
+        <div class="footer-content">
+            <div class="footer-column"><h3>PRODUCTS</h3><ul><li>Footwear</li><li>Clothing</li><li>Accessories</li><li>Outlet-Sale</li><li>New Arrivals</li><li>Flat 50% Off!</li></ul></div>
+            <div class="footer-column"><h3>SPORTS</h3><ul><li>Cricket</li><li>Running</li><li>Football</li><li>Gym/Training</li><li>Tennis</li><li>Outdoor</li></ul></div>
+            <div class="footer-column"><h3>COLLECTIONS</h3><ul><li>Ultraboost</li><li>Superstar</li><li>NMD</li><li>Stan Smith</li><li>Predator</li></ul></div>
+            <div class="footer-column"><h3>SUPPORT</h3><ul><li>Help</li><li>Customer Service</li><li>Returns & Exchanges</li><li>Shipping</li><li>Order Tracker</li></ul></div>
+            <div class="footer-column"><h3>COMPANY INFO</h3><ul><li>About Us</li><li>Athletix Apps</li><li>Entity Details</li><li>Press</li><li>Careers</li></ul></div>
+            <div class="footer-column social"><h3>FOLLOW US</h3><p>📷 Instagram</p></div>
+        </div>
+        <div class="footer-bottom"><p>Privacy Policy | Terms and Conditions | Cookies</p><p>©2025 ATHLETIX India Marketing Pvt. Ltd</p></div>
+    </footer>
+</body>
+</html>
