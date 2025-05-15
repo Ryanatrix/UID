@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Athletix</title>
     <style>
@@ -16,15 +15,45 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #ccc;
         }
 
-        .header a {
-            color: #fff;
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 550px;
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            font-size: 1.3em;
+            align-items: center;
+        }
+
+        .nav-menu a {
             text-decoration: none;
-            margin: 0 10px;
+            color: #ffffff;
+            font-weight: bold;
+            align-items: center;
         }
 
-        .header a:hover {
+        .help-signup {
+            display: flex;
+            gap: 15px;
+            font-size: 1.3em;
+        }
+
+        .help-signup a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .help-signup a:hover {
             text-decoration: underline;
         }
 
@@ -69,60 +98,35 @@
             background-color: #ddd;
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px 40px 40px;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000000;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .help-signup {
-            display: flex;
-            gap: 15px;
-            font-size: 0.9em;
-        }
-
-        .help-signup a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-
-        .help-signup a:hover {
-            text-decoration: underline;
-        }
-
-        .logo img {
-            height: 30px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-
-        footer {
-            background-color: #000;
+        .product-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .product-card a {
+            display: block;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .product-card a:hover {
+            text-decoration: underline;
         }
 
         .promo-banner {
@@ -131,6 +135,7 @@
             padding: 20px 0;
             font-size: 18px;
             font-weight: bold;
+            text-align: center;
         }
 
         .promo-banner button {
@@ -143,18 +148,23 @@
             font-weight: bold;
         }
 
+        footer {
+            background-color: #000;
+            text-align: center;
+        }
+
         .footer-content {
             display: flex;
             justify-content: space-around;
             padding: 40px 10%;
             text-align: left;
             flex-wrap: wrap;
-            color: #ccc
+            color: #ccc;
         }
 
         .footer-column {
             width: 15%;
-            color: #ccc
+            color: #ccc;
         }
 
         .footer-column h3 {
@@ -174,12 +184,26 @@
             cursor: pointer;
         }
 
-        .footer-column ul li:hover {
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
             text-decoration: underline;
         }
 
         .footer-column.social {
             text-align: left;
+        }
+
+        .footer-column.social a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-column.social a:hover {
+            text-decoration: underline;
         }
 
         .footer-bottom {
@@ -188,30 +212,50 @@
             font-size: 12px;
             color: #ccc;
         }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            height: 40px;
+            width: auto;
+        }
+
+        .icons img {
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
+        <div class="header-left">
+            <div class="logo">
+                <a href="s.html">
+                    <img src="logo.jpeg" alt="Athletix">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+                <a href="#">Shoes</a>
+            </div>
+        </div>
         <div class="help-signup">
             <a href="#">Help</a>
             <a href="#">Orders</a>
             <a href="#">Log In</a>
-        </div>
-        <div class="logo">
-            <img src="fav.jpeg" alt="Athletix">
-        </div>
-        <div class="nav-menu">
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="#">Shoes</a>
-        </div>
-
-        <div class="icons">
-            <img src="cart-icon.png" alt="Cart">
+            <div class="logo">
+                <a href="cart.html">
+                    <img src="cart.jpeg" alt="Cart" class="cart-icon">
+                </a>
+            </div>
         </div>
     </div>
+
     <div class="main-content">
         <div class="text-content">
             <h1>SUPERSTAR</h1>
@@ -220,59 +264,58 @@
             <a href="#">Shop Superstar</a>
         </div>
         <div class="image-content">
-            <img src="logo.jpeg" width="250px" , height="250px" , alt="Athletix">
+            <img src="logo.jpeg" width="250px" height="250px" alt="Athletix">
         </div>
     </div>
-<div style="display: flex; justify-content: center; padding: 40px 0; font-family: Arial, sans-serif;">
-    <div style="max-width: 900px; text-align: center;">
-        <h2 style="font-weight: bold;">Popular right now</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 20px; margin-top: 20px;">
-            <div>
-                <a href="/Clothing" style="text-decoration: none; color: black;">
-                    <span style="font-weight: bold; font-size: 1.5em; border-bottom: 3px solid black;">Clothing</span>
-                </a>
-            </div>
-            <div>
-                <a href="/Shoes" style="text-decoration: none; color: black;">
-                    <span style="font-weight: bold; font-size: 1.5em; border-bottom: 3px solid black;">Shoes</span>
-                </a>
-            </div>
-            <div>
-                <a href="/Accessories" style="text-decoration: none; color: black;">
-                    <span
-                        style="font-weight: bold; font-size: 1.5em; border-bottom: 3px solid black;">Accessories</span>
-                </a>
-            </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <a href="men_product2.html">
+                <img src="product2.jpg" alt="Training Shoes">
+                <h3>Real Madrid 99/00 Home Jersey</h3>
+            </a>
+            <p>₹5,299</p>
+        </div>
+        <div class="product-card">
+            <a href="men_product3.html">
+                <img src="product3.jpg" alt="Casual Shoes">
+                <h3>Manchester United UBP Tee</h3>
+            </a>
+            <p>₹3,999</p>
+        </div>
+        <div class="product-card">
+            <a href="men_product4.html">
+                <img src="product4.jpg" alt="High Tops">
+                <h3>High-Top Sneakers</h3>
+            </a>
+            <p>₹4,799</p>
         </div>
     </div>
-</div>
-<div style="padding: 40px 10%; font-family: Arial, sans-serif;">
-    <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 30px;">
-        SELECT YOUR SPORT, FIND YOUR GEAR, AND GET IN THE GAME!
-    </h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-        <a href="/cricket" style="text-align: center; text-decoration: none; color: black;">
-            <img src="images/cricket.jpg" alt="Cricket" style="width: 200px; height: 280px; object-fit: cover;">
-            <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">CRICKET</div>
-        </a>
 
-        <a href="/running" style="text-align: center; text-decoration: none; color: black;">
-            <img src="images/running.jpg" alt="Running" style="width: 200px; height: 280px; object-fit: cover;">
-            <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">RUNNING</div>
-        </a>
-
-
-        <a href="/football" style="text-align: center; text-decoration: none; color: black;">
-            <img src="images/football.jpg" alt="Football" style="width: 200px; height: 280px; object-fit: cover;">
-            <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">FOOTBALL</div>
-        </a>
-
-        <a href="/basketball" style="text-align: center; text-decoration: none; color: black;">
-            <img src="images/basketball.jpg" alt="Basketball" style="width: 200px; height: 280px; object-fit: cover;">
-            <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">BASKETBALL</div>
-        </a>
+    <div style="padding: 40px 10%; font-family: Arial, sans-serif;">
+        <h2 style="font-weight: bold; font-size: 24px; margin-bottom: 30px;">
+            SELECT YOUR SPORT, FIND YOUR GEAR, AND GET IN THE GAME!
+        </h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+            <a href="/cricket" style="text-align: center; text-decoration: none; color: black;">
+                <img src="images/cricket.jpg" alt="Cricket" style="width: 200px; height: 280px; object-fit: cover;">
+                <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">CRICKET</div>
+            </a>
+            <a href="/running" style="text-align: center; text-decoration: none; color: black;">
+                <img src="images/running.jpg" alt="Running" style="width: 200px; height: 280px; object-fit: cover;">
+                <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">RUNNING</div>
+            </a>
+            <a href="/football" style="text-align: center; text-decoration: none; color: black;">
+                <img src="images/football.jpg" alt="Football" style="width: 200px; height: 280px; object-fit: cover;">
+                <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">FOOTBALL</div>
+            </a>
+            <a href="/basketball" style="text-align: center; text-decoration: none; color: black;">
+                <img src="images/basketball.jpg" alt="Basketball" style="width: 200px; height: 280px; object-fit: cover;">
+                <div style="margin-top: 10px; font-weight: bold; border-bottom: 2px solid black;">BASKETBALL</div>
+            </a>
+        </div>
     </div>
-</div>
+
     <footer>
         <div class="promo-banner">
             <p>JOIN Athletix AND GET 10% OFF</p>
@@ -280,55 +323,53 @@
         </div>
         <div class="footer-content">
             <div class="footer-column">
-                <h3>PRODUCTS</h3>
+                <h3>CATEGORIES</h3>
                 <ul>
-                    <li>Footwear</li>
-                    <li>Clothing</li>
-                    <li>Accessories</li>
+                    <li><a href="/footwear">Men</a></li>
+                    <li><a href="/clothing">Women</a></li>
+                    <li><a href="/accessories">Kids</a></li>
+                    <li><a href="/accessories">Shoes</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>SPORTS</h3>
                 <ul>
-                    <li>Cricket</li>
-                    <li>Running</li>
-                
-                    <li>Football</li>
-                  
-                    <li>Basketball</li>
+                    <li><a href="/cricket">Cricket</a></li>
+                    <li><a href="/running">Running</a></li>
+                    <li><a href="/football">Football</a></li>
+                    <li><a href="/basketball">Basketball</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>COLLECTIONS</h3>
                 <ul>
-                    <li>Ultraboost</li>
-                    <li>Superstar</li>
-                    <li>NMD</li>
-                    <li>Stan Smith</li>
-                    <li>Predator</li>
+                    <li><a href="/ultraboost">Ultraboost</a></li>
+                    <li><a href="/superstar">Superstar</a></li>
+                    <li><a href="/nmd">NMD</a></li>
+                    <li><a href="/stansmith">Stan Smith</a></li>
+                    <li><a href="/predator">Predator</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>SUPPORT</h3>
                 <ul>
-                    <li>Help</li>
-                    <li>Customer Service</li>
-                    <li>Returns & Exchanges</li>
-                    <li>Shipping</li>
+                    <li><a href="/help">Help</a></li>
+                    <li><a href="/customer-service">Customer Service</a></li>
+                    <li><a href="/returns">Returns & Exchanges</a></li>
+                    <li><a href="/shipping">Shipping</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>COMPANY INFO</h3>
                 <ul>
-                    <li>About Us</li>
-                    <li>Athletix Apps</li>
-                    <li>Entity Details</li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/entity-details">Entity Details</a></li>
                 </ul>
             </div>
             <div class="footer-column social">
                 <h3>FOLLOW US</h3>
-                <p>📷 Instagram</p>
-                <p>🐦‍⬛ X</p>
+                <p><a href="https://www.instagram.com" target="_blank">📷 Instagram</a></p>
+                <p><a href="https://www.twitter.com" target="_blank">🐦‍⬛ X</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -337,5 +378,4 @@
         </div>
     </footer>
 </body>
-
 </html>
