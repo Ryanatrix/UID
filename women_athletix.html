@@ -4,7 +4,11 @@
 <head>
     <title>Women - Athletix</title>
     <style>
-        body {
+        * {
+            font-family: Arial, sans-serif;
+       }
+ 
+       body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
@@ -19,10 +23,34 @@
             border-bottom: 1px solid #ccc;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 550px;
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            font-size: 1.3em;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            align-items: center;
+        }
+
         .help-signup {
             display: flex;
-            gap: 15px;
-            font-size: 0.9em;
+            gap: 20px;
+            font-size: 1.3em;
         }
 
         .help-signup a {
@@ -34,59 +62,48 @@
             text-decoration: underline;
         }
 
-        .logo img {
-            height: 30px;
-        }
 
-        .nav-menu {
+        .main-content {
             display: flex;
-            gap: 20px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .search-bar {
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            border: 1px solid #ccc;
-            padding: 5px;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main-content .text-content {
+            max-width: 30%;
+        }
+
+        .main-content .text-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .main-content .text-content p {
+            font-size: 1.2em;
+        }
+
+        .main-content .text-content a {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
             border-radius: 5px;
         }
 
-        .search-bar input {
-            border: none;
-            outline: none;
+        .main-content .text-content a:hover {
+            background-color: #000;
         }
 
-        .icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .notification {
-            position: relative;
-        }
-
-        .notification-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: yellow;
-            border-radius: 50%;
-            padding: 2px 5px;
-            font-size: 12px;
-        }
-
-        .main-content {
-            background-color: #fff;
-            color: #000;
-            padding: 20px;
-        }
 
         .main-content h1 {
             text-align: center;
@@ -125,18 +142,13 @@
             border-radius: 10px;
             cursor: pointer;
         }
-
-        footer {
-            background-color: #000;
-            text-align: center;
-        }
-
         .promo-banner {
             background-color: #F7E146;
             color: #000;
             padding: 20px 0;
             font-size: 18px;
             font-weight: bold;
+            text-align: center;
         }
 
         .promo-banner button {
@@ -147,6 +159,11 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+        }
+
+        footer {
+            background-color: #000;
+            text-align: center;
         }
 
         .footer-content {
@@ -160,6 +177,7 @@
 
         .footer-column {
             width: 15%;
+            color: #ccc;
         }
 
         .footer-column h3 {
@@ -179,7 +197,12 @@
             cursor: pointer;
         }
 
-        .footer-column ul li:hover {
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
             text-decoration: underline;
         }
 
@@ -187,11 +210,34 @@
             text-align: left;
         }
 
+        .footer-column.social a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-column.social a:hover {
+            text-decoration: underline;
+        }
+
         .footer-bottom {
             background-color: #1a1a1a;
             padding: 15px 0;
             font-size: 12px;
             color: #ccc;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            height: 40px;
+            width: auto;
+        }
+
+        .icons img {
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
         }
     </style>
 </head>
