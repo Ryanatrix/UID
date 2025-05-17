@@ -55,7 +55,7 @@ function logIn() {
   if (user) {
     localStorage.setItem("currentUser", user.email);
     alert("Login successful! Welcome back, " + user.name + "!");
-    window.location.href = "home.htm"; // <--- Redirect here
+    window.location.href = "homepage.html"; // <--- Redirect here
   } else {
     alert("Invalid email or password.");
   }
