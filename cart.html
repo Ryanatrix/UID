@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="background-color: white;">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Athletix - Football</title>
+  <style>
+    html,body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+        }
+        .cart-table { border-collapse: collapse; width: 100%; }
+        .cart-table th, .cart-table td { border: 1px solid #ddd; padding: 8px; }
+        .cart-total { margin-top: 10px; font-weight: bold; }
+
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 550px;
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            font-size: 1.3em;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            align-items: center;
+        }
+
+        .help-signup {
+            display: flex;
+            gap: 20px;
+            font-size: 1.3em;
+        }
+
+        .help-signup a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .help-signup a:hover {
+            text-decoration: underline;
+        }
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      background: white ;
+      padding: 40px 5%;
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-btn {
+      margin-bottom: 20px;
+      background: #eee;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .product-images {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-details {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .main-image:hover {
+      transform: scale(1.02);
+    }
+
+    .thumbnail-container {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .thumbnail:hover {
+      border-color: #0056b3;
+    }
+
+    .thumbnail.active {
+      border-color: #0056b3;
+    }
+
+    h1, h2 {
+      margin: 15px 0;
+    }
+
+    .size-selector {
+      margin: 30px 0;
+    }
+
+    .size-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .size-option {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .size-option:hover {
+      border-color: #0056b3;
+    }
+
+    .size-option.selected {
+      background-color: #0056b3;
+      color: white;
+      border-color: #0056b3;
+    }
+
+    .add-to-bag-container {
+      margin-top: 30px;
+    }
+
+    button.add-to-bag {
+      width: 200px;
+      padding: 15px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button.add-to-bag:hover {
+      background: #0056b3;
+    }
+
+    .reviews {
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
+
+    .review {
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+.promo-banner {
+            background-color: #F7E146;
+            color: #000;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .promo-banner button {
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+    footer {
+            background-color: #000;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 10%;
+            text-align: left;
+            flex-wrap: wrap;
+            color: #ccc;
+        }
+
+        .footer-column {
+            width: 15%;
+            color: #ccc;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            font-size: 13px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column.social {
+            text-align: left;
+        }
+
+        .footer-column.social a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-column.social a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            height: 40px;
+            width: auto;
+        }
+
+        .icons img {
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
+        }
+
+        .collection-heading {
+            text-align: center;
+            font-size: 3em;
+            margin: 40px 0 20px;
+            color: white;
+            background-color: #000;
+        }
+</style>
+</head>
+<body style="background-color: white;">
+  <div class="header">
+        <div class="header-left">
+            <div class="logo">
+                <a href="homepage.html">
+                    <img src="logo.jpeg" alt="Athletix">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="men_athletix.html">Men</a>
+                <a href="women_athletix.html">Women</a>
+                <a href="kids_athletix.html">Kids</a>
+                <a href="shoes_athletix.html">Shoes</a>
+            </div>
+        </div>
+        <div class="help-signup">
+            <a href="#">Help</a>
+            <a href="#">Orders</a>
+            <a href="#">Log In</a>
+            <div class="logo">
+                <a href="cart.html">
+                    <img src="cart.jpeg" alt="Cart" class="cart-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+<h1>Shopping Cart</h1>
+  <div id="cart-container"></div>
+  <button onclick="emptyCart()">Delete</button>
+  <button onclick="popTopCartItem()">Pop</button>
+<footer>
+        <div class="promo-banner">
+            <p>JOIN Athletix AND GET 10% OFF</p>
+            <button>Sign Up for Free →</button>
+        </div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>CATEGORIES</h3>
+                <ul>
+                    <li><a href="men_athletix.html">Men</a></li>
+                    <li><a href="women_athletix.html">Women</a></li>
+                    <li><a href="kids_athletix.html">Kids</a></li>
+                    <li><a href="shoes_athletix.html">Shoes</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SPORTS</h3>
+                <ul>
+                    <li><a href="cricket_athletix.html">Cricket</a></li>
+                    
+                    <li><a href="football_athletix.html">Football</a></li>
+                    <li><a href="basketball_athletix.html">Basketball</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="customer.html">Customer Service</a></li>
+                    <li><a href="return.html">Returns & Exchanges</a></li>
+                    <li><a href="shipping.html">Shipping</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>COMPANY INFO</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="entity.html">Entity Details</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h3>FOLLOW US</h3>
+                <p><a href="https://www.instagram.com" target="_blank">📷 Instagram</a></p>
+                <p><a href="https://www.twitter.com" target="_blank">🐦‍⬛ X</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Privacy Policy | Terms and Conditions | Cookies</p>
+            <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
+        </div>
+    </footer>
+<script>
+    window.addEventListener("load", function() {
+      if (typeof displayCart === 'function') {
+        displayCart();
+      }
+    });
+  </script>
+</body>
+</html>
