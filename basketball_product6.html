@@ -473,50 +473,7 @@
     </div>
   </footer>
 
-  <script>
-    let selectedSize = null;
-
-    function changeImage(element) {
-      // Update main image
-      document.getElementById('mainImage').src = element.src;
-      
-      // Update active thumbnail
-      document.querySelectorAll('.thumbnail').forEach(thumb => {
-        thumb.classList.remove('active');
-      });
-      element.classList.add('active');
-    }
-
-    function selectSize(element) {
-      // Update selected size
-      document.querySelectorAll('.size-option').forEach(option => {
-        option.classList.remove('selected');
-      });
-      element.classList.add('selected');
-      selectedSize = element.textContent;
-    }
-
-    function addToCart() {
-      if (!selectedSize) {
-        alert('Please select a size before adding to bag!');
-        return;
-      }
-
-      const product = {
-        id: 506,
-        name: "Some cricket product",
-        price: 129.99,
-        size: selectedSize,
-        quantity: 1,
-        image: document.getElementById('mainImage').src
-      };
-
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push(product);
-      localStorage.setItem('cart', JSON.stringify(cart));
-
-      alert(`Added to bag: ${product.name} (Size ${selectedSize})`);
-    }
+  <script src ="auth.js">
   </script>
 </body>
 </html>
