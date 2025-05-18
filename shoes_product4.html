@@ -392,8 +392,10 @@
           </div>
         </div>
 
-        <div class="add-to-bag-container">
-          <button class="add-to-bag" onclick="addToCart()">Add to Bag</button>
+       <div class="add-to-bag-container">
+          <button class="add-to-bag" onclick="addToCart(this)" data-id="304" data-name="Nike Kids T-shirt" data-price="129.99">
+  		        Add to Bag
+	        </button>
         </div>
 
         
@@ -471,50 +473,7 @@
     </div>
   </footer>
 
-  <script>
-    let selectedSize = null;
-
-    function changeImage(element) {
-      // Update main image
-      document.getElementById('mainImage').src = element.src;
-      
-      // Update active thumbnail
-      document.querySelectorAll('.thumbnail').forEach(thumb => {
-        thumb.classList.remove('active');
-      });
-      element.classList.add('active');
-    }
-
-    function selectSize(element) {
-      // Update selected size
-      document.querySelectorAll('.size-option').forEach(option => {
-        option.classList.remove('selected');
-      });
-      element.classList.add('selected');
-      selectedSize = element.textContent;
-    }
-
-    function addToCart() {
-      if (!selectedSize) {
-        alert('Please select a size before adding to bag!');
-        return;
-      }
-
-      const product = {
-        id: 304,
-        name: "Nike Air Max 270",
-        price: 129.99,
-        size: selectedSize,
-        quantity: 1,
-        image: document.getElementById('mainImage').src
-      };
-
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push(product);
-      localStorage.setItem('cart', JSON.stringify(cart));
-
-      alert(`Added to bag: ${product.name} (Size ${selectedSize})`);
-    }
+  <script src ="auth.js">
   </script>
 </body>
 </html>
