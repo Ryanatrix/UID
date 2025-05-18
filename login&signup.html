@@ -72,53 +72,7 @@
     <div class="toggle-link" onclick="toggleForms()">Don't have an account? Sign Up</div>
   </div>
 
-  <script>
-    function toggleForms() {
-      document.getElementById("signup-form").style.display =
-        document.getElementById("signup-form").style.display === "none" ? "block" : "none";
-      document.getElementById("login-form").style.display =
-        document.getElementById("login-form").style.display === "none" ? "block" : "none";
-    }
-
-    function signUp() {
-      const name = document.getElementById("signup-name").value;
-      const email = document.getElementById("signup-email").value;
-      const password = document.getElementById("signup-password").value;
-
-      if (!name || !email || !password) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      let users = JSON.parse(localStorage.getItem("users") || "[]");
-
-      if (users.find(u => u.email === email)) {
-        alert("This email is already registered.");
-        return;
-      }
-
-      users.push({ name, email, password });
-      localStorage.setItem("users", JSON.stringify(users));
-      localStorage.setItem("currentUser", email);
-      alert("Sign up successful!");
-      toggleForms();
-    }
-
-    function logIn() {
-      const email = document.getElementById("login-email").value;
-      const password = document.getElementById("login-password").value;
-
-      let users = JSON.parse(localStorage.getItem("users") || "[]");
-      const user = users.find(u => u.email === email && u.password === password);
-
-      if (user) {
-        localStorage.setItem("currentUser", user.email);
-        alert("Login successful!");
-      } else {
-        alert("Invalid email or password.");
-      }
-    }
-  </script>
+<script src="auth.js"></script>
 
 </body>
 </html>
