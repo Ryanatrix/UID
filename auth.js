@@ -124,6 +124,12 @@ function displayCart() {
   const cartContainer = document.getElementById('cart-container');
   if (!cartContainer) return;
 
+  // Make the table much closer to the page edge
+  cartContainer.style.padding = '0 2px';
+  cartContainer.style.maxWidth = '1000px';
+  cartContainer.style.margin = '0 auto';
+  cartContainer.style.boxSizing = 'border-box';
+
   const currentUser = localStorage.getItem("currentUser");
   if (!currentUser) {
     cartContainer.innerHTML = '<p>Please log in to view your cart.</p>';
@@ -139,11 +145,24 @@ function displayCart() {
     return;
   }
 
+  // Create a wrapper to center the table
+  const wrapper = document.createElement('div');
+  wrapper.style.display = 'flex';
+  wrapper.style.justifyContent = 'center';
+  wrapper.style.margin = '32px 0';
+
   const cartTable = document.createElement('table');
   cartTable.className = 'cart-table';
+  cartTable.style.border = '3px solid #222';
+  cartTable.style.boxShadow = '0 4px 24px rgba(0,0,0,0.4)';
+  cartTable.style.background = '#fff';
+  cartTable.style.borderRadius = '14px';
+  cartTable.style.overflow = 'hidden';
+  cartTable.style.margin = '0'; // Let the wrapper handle centering
+
   cartTable.innerHTML = `
     <thead>
-      <tr>
+      <tr style="background:#1a1a1a; color:#fff;">
         <th>Image</th>
         <th>Name</th>
         <th>Size</th>
@@ -164,7 +183,7 @@ function displayCart() {
     totalPrice += productTotal;
 
     row.innerHTML = `
-      <td><img src="${product.image}" alt="${product.name}" width="50" height="50" /></td>
+      <td><img src="${product.image}" alt="${product.name}" width="50" height="50" style="border-radius:8px;"/></td>
       <td>${product.name}</td>
       <td>${product.size}</td>
       <td>₹${product.price.toFixed(2)}</td>
@@ -174,11 +193,15 @@ function displayCart() {
     tbody.appendChild(row);
   });
 
-  cartContainer.appendChild(cartTable);
+  wrapper.appendChild(cartTable);
+  cartContainer.appendChild(wrapper);
 
   // Total price
   const totalDiv = document.createElement('div');
   totalDiv.className = 'cart-total';
+  totalDiv.style.textAlign = 'center';
+  totalDiv.style.fontSize = '1.2rem';
+  totalDiv.style.marginTop = '16px';
   totalDiv.innerHTML = `<strong>Total: ₹${totalPrice.toFixed(2)}</strong>`;
   cartContainer.appendChild(totalDiv);
 }
