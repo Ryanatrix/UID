@@ -334,10 +334,35 @@
             </div>
         </div>
     </div>
-<h1>Shopping Cart</h1>
+  <h1 style="text-align: center;">Shopping Cart</h1>
   <div id="cart-container"></div>
-  <button onclick="emptyCart()">Delete</button>
-  <button onclick="popTopCartItem()">Pop</button>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 14px; margin: 32px 0;">
+  <button 
+    onclick="emptyCart()" 
+    style="background: #111; color: #fff; border: none; padding: 10px 24px; border-radius: 0; font-size: 1.08rem; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.18); cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s, transform 0.1s, box-shadow 0.2s;"
+    onmouseover="this.style.background='#222';this.style.transform='scale(1.04)';this.style.boxShadow='0 4px 18px rgba(0,0,0,0.28)';"
+    onmouseout="this.style.background='#111';this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.18)';"
+  >
+    Buy Now
+  </button>
+
+  <button 
+    onclick="popTopCartItem()" 
+    style="background: #111; color: #fff; border: none; padding: 10px 24px; border-radius: 0; font-size: 1.08rem; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.18); cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s, transform 0.1s, box-shadow 0.2s;"
+    onmouseover="this.style.background='#222';this.style.transform='scale(1.04)';this.style.boxShadow='0 4px 18px rgba(0,0,0,0.28)';"
+    onmouseout="this.style.background='#111';this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.18)';"
+  >
+    Remove
+  </button>
+</div>
+  <script src="auth.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      if (typeof displayCart === 'function') {
+        displayCart();
+      }
+    });
+  </script>
 <footer>
         <div class="promo-banner">
             <p>JOIN Athletix AND GET 10% OFF</p>
@@ -390,12 +415,5 @@
             <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
         </div>
     </footer>
-<script>
-    window.addEventListener("load", function() {
-      if (typeof displayCart === 'function') {
-        displayCart();
-      }
-    });
-  </script>
 </body>
 </html>
