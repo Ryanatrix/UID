@@ -147,7 +147,6 @@ function displayCart() {
 
   // Create a wrapper to center the table
   const wrapper = document.createElement('div');
-  wrapper.style.display = 'flex';
   wrapper.style.justifyContent = 'center';
   wrapper.style.margin = '32px 0';
 
@@ -323,7 +322,6 @@ function displayCartStack() {
 
   // Create a wrapper to center the table
   const wrapper = document.createElement('div');
-  wrapper.style.display = 'flex';
   wrapper.style.justifyContent = 'center';
   wrapper.style.margin = '32px 0';
 
