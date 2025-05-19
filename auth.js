@@ -141,7 +141,7 @@ function displayCart() {
   cartContainer.innerHTML = ''; // Clear previous contents
 
   if (cart.length === 0) {
-    cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+    cartContainer.innerHTML = '<p style="text-align: center;">Your cart is empty.</p>';
     return;
   }
 
@@ -205,7 +205,40 @@ function displayCart() {
   totalDiv.innerHTML = `<strong>Total: ₹${totalPrice.toFixed(2)}</strong>`;
   cartContainer.appendChild(totalDiv);
 }
-function emptyCart() {
+// Function to append user's cart items to cartStack (for undo, etc.)
+function appendCartToStack() {
+  const currentUser = localStorage.getItem("currentUser");
+  if (!currentUser) {
+    alert("Please log in to manage your cart.");
+    return;
+  }
+
+  let userCarts = JSON.parse(localStorage.getItem('userCarts') || "{}");
+
+  // Load previous stack if it exists
+  let prevStack = [];
+  const stackKey = 'cartStack_' + currentUser;
+  const savedStack = localStorage.getItem(stackKey);
+  if (savedStack) {
+    prevStack = JSON.parse(savedStack);
+  }
+
+  // Get current cart items
+  let currentCart = [];
+  if (userCarts[currentUser] && Array.isArray(userCarts[currentUser])) {
+    currentCart = userCarts[currentUser];
+  }
+
+  // Append new items to previous stack (you can choose to push or unshift based on your stack logic)
+  // Here, we add the current cart items to the end of the stack array.
+  const newStack = prevStack.concat(currentCart);
+
+  // Save the updated stack
+  localStorage.setItem(stackKey, JSON.stringify(newStack));
+}
+
+// Function to empty the user's cart
+function emptyUserCart() {
   const currentUser = localStorage.getItem("currentUser");
   if (!currentUser) {
     alert("Please log in to clear your cart.");
@@ -216,7 +249,6 @@ function emptyCart() {
   userCarts[currentUser] = [];
   localStorage.setItem('userCarts', JSON.stringify(userCarts));
 
-  // If you want to update the cart display immediately, call displayCart() if it exists
   if (typeof displayCart === "function") {
     displayCart();
   }
@@ -250,4 +282,95 @@ function popTopCartItem() {
     displayCart();
   }
   alert("Removed the last item from your cart.");
+}
+function displayCartStack() {
+  const cartContainer = document.getElementById('cart-container');
+  if (!cartContainer) return;
+
+  // Make the table much closer to the page edge
+  cartContainer.style.padding = '0 2px';
+  cartContainer.style.maxWidth = '1000px';
+  cartContainer.style.margin = '0 auto';
+  cartContainer.style.boxSizing = 'border-box';
+
+  const currentUser = localStorage.getItem("currentUser");
+  if (!currentUser) {
+    cartContainer.innerHTML = '<p>Please log in to view your cart.</p>';
+    return;
+  }
+
+  // Read cartStack from localStorage
+  let cartStack = [];
+  // Try to get the stack as saved by emptyCart
+  const cartStackKey = 'cartStack_' + currentUser;
+  const stackFromStorage = localStorage.getItem(cartStackKey);
+  if (stackFromStorage) {
+    cartStack = JSON.parse(stackFromStorage);
+  } else {
+    // Fallback: try userCarts[currentUser].cartStack 
+    let userCarts = JSON.parse(localStorage.getItem('userCarts') || "{}");
+    if (userCarts[currentUser]?.cartStack && Array.isArray(userCarts[currentUser].cartStack)) {
+      cartStack = userCarts[currentUser].cartStack;
+    }
+  }
+
+  cartContainer.innerHTML = ''; // Clear previous contents
+
+  if (!cartStack || cartStack.length === 0) {
+    cartContainer.innerHTML = '<p style="text-align: center;">No Orders so far.</p>';
+    return;
+  }
+
+  // Create a wrapper to center the table
+  const wrapper = document.createElement('div');
+  wrapper.style.display = 'flex';
+  wrapper.style.justifyContent = 'center';
+  wrapper.style.margin = '32px 0';
+
+  const cartTable = document.createElement('table');
+  cartTable.className = 'cart-table';
+  cartTable.style.border = '3px solid #222';
+  cartTable.style.boxShadow = '0 4px 24px rgba(0,0,0,0.4)';
+  cartTable.style.background = '#fff';
+  cartTable.style.borderRadius = '14px';
+  cartTable.style.overflow = 'hidden';
+  cartTable.style.margin = '0'; // Let the wrapper handle centering
+
+  cartTable.innerHTML = `
+    <thead>
+      <tr style="background:#1a1a1a; color:#fff;">
+        <th>Image</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  `;
+
+  let totalPrice = 0;
+  const tbody = cartTable.querySelector('tbody');
+
+  cartStack.forEach(product => {
+    const row = document.createElement('tr');
+    const productTotal = product.price * product.quantity;
+    totalPrice += productTotal;
+
+    row.innerHTML = `
+      <td><img src="${product.image}" alt="${product.name}" width="50" height="50" style="border-radius:8px;"/></td>
+      <td>${product.name}</td>
+      <td>${product.size}</td>
+      <td>₹${product.price.toFixed(2)}</td>
+      <td>${product.quantity}</td>
+      <td>₹${productTotal.toFixed(2)}</td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  wrapper.appendChild(cartTable);
+  cartContainer.appendChild(wrapper);
+
+  
 }
