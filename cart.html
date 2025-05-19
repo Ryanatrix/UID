@@ -338,7 +338,7 @@
   <div id="cart-container"></div>
   <div style="display: flex; justify-content: center; align-items: center; gap: 14px; margin: 100px 0;">
   <button 
-    onclick="emptyCart()" 
+    onclick="appendCartToStack();emptyUserCart();" 
     style="background: #111; color: #fff; border: none; padding: 10px 24px; border-radius: 0; font-size: 1.08rem; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.18); cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s, transform 0.1s, box-shadow 0.2s;"
     onmouseover="this.style.background='#222';this.style.transform='scale(1.04)';this.style.boxShadow='0 4px 18px rgba(0,0,0,0.28)';"
     onmouseout="this.style.background='#111';this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.18)';"
