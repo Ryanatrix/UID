@@ -5,64 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nike Tech Men's Full-Zip Windrunner Hoodie</title>
   <style>
-   html,body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-        }
+    html,body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
 
-        .header {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ccc;
-        }
+    .header {
+      background-color: #fff;
+      color: #000;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 550px;
-        }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 550px;
+    }
 
-        .logo img {
-            height: 30px;
-        }
+    .logo img {
+      height: 30px;
+    }
 
-        .nav-menu {
-            display: flex;
-            gap: 25px;
-            font-size: 1.3em;
-            align-items: center;
-        }
+    .nav-menu {
+      display: flex;
+      gap: 25px;
+      font-size: 1.3em;
+      align-items: center;
+    }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            align-items: center;
-        }
+    .nav-menu a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      align-items: center;
+    }
 
-        .help-signup {
-            display: flex;
-            gap: 20px;
-            font-size: 1.3em;
-        }
+    .nav-menu a:hover {
+      text-decoration: underline;
+    }
 
-        .help-signup a {
-            text-decoration: none;
-            color: #ffffff;
-        }
+    .help-signup {
+      display: flex;
+      gap: 20px;
+      font-size: 1.3em;
+    }
 
-        .help-signup a:hover {
-            text-decoration: underline;
-        }
+    .help-signup a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .help-signup a:hover {
+      text-decoration: underline;
+    }
+
     .container {
       width: 100%;
       min-height: 100vh;
-      background: white ;
+      background: #fff;
       padding: 40px 5%;
       box-sizing: border-box;
       max-width: 1200px;
@@ -76,6 +82,7 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
+      color: #000;
     }
 
     .product-container {
@@ -101,6 +108,8 @@
       margin-bottom: 15px;
       cursor: zoom-in;
       transition: transform 0.3s ease;
+      background: #fff;
+      display: block;
     }
 
     .main-image:hover {
@@ -121,6 +130,7 @@
       cursor: pointer;
       border: 2px solid transparent;
       transition: all 0.3s ease;
+      background: #fff;
     }
 
     .thumbnail:hover {
@@ -133,6 +143,7 @@
 
     h1, h2 {
       margin: 15px 0;
+      color: #000;
     }
 
     .size-selector {
@@ -152,10 +163,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid black;
+      border: 1px solid #000;
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.3s ease;
+      background: #fff;
+      color: #000;
     }
 
     .size-option:hover {
@@ -164,7 +177,7 @@
 
     .size-option.selected {
       background-color: #0056b3;
-      color: white;
+      color: #fff;
       border-color: #0056b3;
     }
 
@@ -175,8 +188,8 @@
     button.add-to-bag {
       width: 200px;
       padding: 15px;
-      background-color: black;
-      color: white;
+      background-color: #000;
+      color: #fff;
       border: none;
       border-radius: 5px;
       font-size: 16px;
@@ -198,236 +211,227 @@
       margin-bottom: 12px;
       font-style: italic;
     }
-.promo-banner {
-            background-color: #F7E146;
-            color: #000;
-            padding: 20px 0;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-        }
 
-        .promo-banner button {
-            background-color: #000;
-            color: #fff;
-            border: 2px solid #000;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
+    .promo-banner {
+      background-color: #F7E146;
+      color: #000;
+      padding: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .promo-banner button {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #000;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
 
     footer {
-            background-color: #000;
-            text-align: center;
-        }
+      background-color: #fff;
+      text-align: center;
+      color: #000;
+    }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            padding: 40px 10%;
-            text-align: left;
-            flex-wrap: wrap;
-            color: #ccc;
-        }
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 10%;
+      text-align: left;
+      flex-wrap: wrap;
+      color: #333;
+      background: #fff;
+    }
 
-        .footer-column {
-            width: 15%;
-            color: #ccc;
-        }
+    .footer-column {
+      width: 15%;
+      color: #333;
+    }
 
-        .footer-column h3 {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+    .footer-column h3 {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #000;
+    }
 
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        .footer-column ul li {
-            font-size: 13px;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
+    .footer-column ul li {
+      font-size: 13px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
 
-        .footer-column ul li a {
-            color: #ccc;
-            text-decoration: none;
-        }
+    .footer-column ul li a {
+      color: #333;
+      text-decoration: none;
+    }
 
-        .footer-column ul li a:hover {
-            text-decoration: underline;
-        }
+    .footer-column ul li a:hover {
+      text-decoration: underline;
+    }
 
-        .footer-column.social {
-            text-align: left;
-        }
+    .footer-column.social {
+      text-align: left;
+    }
 
-        .footer-column.social a {
-            color: #ccc;
-            text-decoration: none;
-        }
+    .footer-column.social a {
+      color: #333;
+      text-decoration: none;
+    }
 
-        .footer-column.social a:hover {
-            text-decoration: underline;
-        }
+    .footer-column.social a:hover {
+      text-decoration: underline;
+    }
 
-        .footer-bottom {
-            background-color: #1a1a1a;
-            padding: 15px 0;
-            font-size: 12px;
-            color: #ccc;
-        }
+    .footer-bottom {
+      background-color: #f3f3f3;
+      padding: 15px 0;
+      font-size: 12px;
+      color: #666;
+    }
 
-        .icons {
-            display: flex;
-            align-items: center;
-            gap: 1px;
-            height: 40px;
-            width: auto;
-        }
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      height: 40px;
+      width: auto;
+    }
 
-        .icons img {
-            height: 30px;
-            width: 30px;
-            object-fit: contain;
-        }
+    .icons img {
+      height: 30px;
+      width: 30px;
+      object-fit: contain;
+    }
 
-        .collection-heading {
-            text-align: center;
-            font-size: 3em;
-            margin: 40px 0 20px;
-            color: white;
-            background-color: #000;
-        }
-
+    .collection-heading {
+      text-align: center;
+      font-size: 3em;
+      margin: 40px 0 20px;
+      color: #000;
+      background-color: #fff;
+    }
   </style>
 </head>
 <body>
   <div class="header">
-        <div class="header-left">
-            <div class="logo">
-                <a href="homepage.html">
-                    <img src="logo.jpeg" alt="Athletix">
-                </a>
-            </div>
-            <div class="nav-menu">
-                <a href="men_athletix.html">Men</a>
-                <a href="women_athletix.html">Women</a>
-                <a href="kids_athletix.html">Kids</a>
-                <a href="shoes_athletix.html">Shoes</a>
-            </div>
-        </div>
-        <div class="help-signup">
-            <a href="help.html">Help</a>
-            <a href="orders.html">Orders</a>
-            <a href="login&signup.html">Log In</a>
-            <div class="logo">
-                <a href="cart.html">
-                    <img src="cart.jpeg" alt="Cart" class="cart-icon">
-                </a>
-            </div>
-        </div>
-    </div>
-
-  <div class="container">
-    <button class="back-btn" onclick="history.back()">← Back to Catalogue</button>
-
-    <div class="product-container">
-      <div class="product-images">
-        <img id="mainImage" class="main-image" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b09707fa-7e12-487c-8d4f-27938c0c40b6/M+NK+TCH+FLC+FZ+WR+HOODIE.png" alt="Urban Formal Sneakers" />
-        
-        <div class="thumbnail-container">
-          <img class="thumbnail active" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b09707fa-7e12-487c-8d4f-27938c0c40b6/M+NK+TCH+FLC+FZ+WR+HOODIE.png" onclick="changeImage(this)" alt="Angle 1">
-          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cf6d660d-5946-41fd-a8dc-0a04647b8db4/M+NK+TCH+FLC+FZ+WR+HOODIE.png" onclick="changeImage(this)" alt="Angle 2">
-          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/af57424c-f373-459d-9171-50865a379f0e/M+NK+TCH+FLC+FZ+WR+HOODIE.png" onclick="changeImage(this)" alt="Angle 3">
-        </div>
+    <div class="header-left">
+      <div class="logo">
+        <a href="homepage.html">
+          <img src="logo.jpeg" alt="Athletix">
+        </a>
       </div>
-
-      <div class="product-details">
-        <h1>Nike Tech Men's Full-Zip Windrunner Hoodie</h1>
-        <h2> ₹11556.09</h2>
-
-        <p><strong>Description:</strong> Modern style meets all-day comfort. The Nike Tech Windrunner Hoodie features a sleek, streamlined fit with lightweight fleece and iconic chevron design — perfect for layering in any season.</p>
-
-        <div class="size-selector">
-          <strong>Select Size:</strong>
-          <div class="size-options">
-            <div class="size-option" onclick="selectSize(this)">S</div>
-            <div class="size-option" onclick="selectSize(this)">M</div>
-            <div class="size-option" onclick="selectSize(this)">L</div>
-            <div class="size-option" onclick="selectSize(this)">XL</div>
-            <div class="size-option" onclick="selectSize(this)">XXL</div>
-          </div>
-        </div>
-
-        <div class="add-to-bag-container">
-          <button class="add-to-bag" onclick="addToCart(this)" data-id="009" data-name="Nike Tech Men's Full-Zip Windrunner Hoodie" data-price="11556.09">
-  		        Add to Bag
-	        </button>
-        </div>
+      <div class="nav-menu">
+        <a href="men_athletix.html">Men</a>
+        <a href="women_athletix.html">Women</a>
+        <a href="kids_athletix.html">Kids</a>
+        <a href="shoes_athletix.html">Shoes</a>
+      </div>
+    </div>
+    <div class="help-signup">
+      <a href="help.html">Help</a>
+      <a href="orders.html">Orders</a>
+      <a href="login&signup.html">Log In</a>
+      <div class="logo">
+        <a href="cart.html">
+          <img src="cart.jpeg" alt="Cart" class="cart-icon">
+        </a>
       </div>
     </div>
   </div>
 
+  <div class="container">
+    <button class="back-btn" onclick="history.back()">← Back to Catalogue</button>
+    <div class="product-container">
+      <div class="product-images">
+        <img id="mainImage" class="main-image" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b09707fa-7e12-487c-8d4f-27938c0c40b6/M+NK+TCH+FLC+FZ+WR+HOODIE.png" alt="Urban Formal Sneakers" />
+        <div class="thumbnail-container">
+          <img class="thumbnail active" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b09707fa-7e12-487c-8d4f-27938c0c40b6/M+NK+TCH+FLC+FZ+WR+HOODIE.png" alt="Angle 1">
+          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cf6d660d-5946-41fd-a8dc-0a04647b8db4/M+NK+TCH+FLC+FZ+WR+HOODIE.png" alt="Angle 2">
+          <img class="thumbnail" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/af57424c-f373-459d-9171-50865a379f0e/M+NK+TCH+FLC+FZ+WR+HOODIE.png" alt="Angle 3">
+        </div>
+      </div>
+      <div class="product-details">
+        <h1>Nike Tech Men's Full-Zip Windrunner Hoodie</h1>
+        <h2> ₹11556.09</h2>
+        <p><strong>Description:</strong> Modern style meets all-day comfort. The Nike Tech Windrunner Hoodie features a sleek, streamlined fit with lightweight fleece and iconic chevron design — perfect for layering in any season.</p>
+        <div class="size-selector">
+          <strong>Select Size:</strong>
+          <div class="size-options">
+            <div class="size-option">S</div>
+            <div class="size-option">M</div>
+            <div class="size-option">L</div>
+            <div class="size-option">XL</div>
+            <div class="size-option">XXL</div>
+          </div>
+        </div>
+        <div class="add-to-bag-container">
+          <button class="add-to-bag" data-id="009" data-name="Nike Tech Men's Full-Zip Windrunner Hoodie" data-price="11556.09">
+            Add to Bag
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer>
-        <div class="promo-banner">
-            <p>JOIN Athletix AND GET 10% OFF</p>
-            <button onclick="window.location.href='https://ryanatrix.github.io/UID/login&signup.html'">Sign Up for Free →</button>
-
-        </div>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>CATEGORIES</h3>
-                <ul>
-                    <li><a href="men_athletix.html">Men</a></li>
-                    <li><a href="women_athletix.html">Women</a></li>
-                    <li><a href="kids_athletix.html">Kids</a></li>
-                    <li><a href="shoes_athletix.html">Shoes</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>SPORTS</h3>
-                <ul>
-                    <li><a href="cricket_athletix.html">Cricket</a></li>
-                    
-                    <li><a href="football_athletix.html">Football</a></li>
-                    <li><a href="basketball_athletix.html">Basketball</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>SUPPORT</h3>
-                <ul>
-                    <li><a href="help.html">Help</a></li>
-                    <li><a href="customer.html">Customer Service</a></li>
-                    <li><a href="return.html">Returns & Exchanges</a></li>
-                    <li><a href="shipping.html">Shipping</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>COMPANY INFO</h3>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="entity.html">Entity Details</a></li>
-                </ul>
-            </div>
-            <div class="footer-column social">
-                <h3>FOLLOW US</h3>
-                <p><a href="https://www.instagram.com" target="_blank">📷 Instagram</a></p>
-                <p><a href="https://www.twitter.com" target="_blank">🐦‍⬛ X</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Privacy Policy | Terms and Conditions | Cookies</p>
-            <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
-        </div>
-    </footer>
-
-  <script src ="auth.js">
-  </script>
+    <div class="promo-banner">
+      <p>JOIN Athletix AND GET 10% OFF</p>
+      <button onclick="window.location.href='https://ryanatrix.github.io/UID/login&signup.html'">Sign Up for Free →</button>
+    </div>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>CATEGORIES</h3>
+        <ul>
+          <li><a href="men_athletix.html">Men</a></li>
+          <li><a href="women_athletix.html">Women</a></li>
+          <li><a href="kids_athletix.html">Kids</a></li>
+          <li><a href="shoes_athletix.html">Shoes</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SPORTS</h3>
+        <ul>
+          <li><a href="cricket_athletix.html">Cricket</a></li>
+          <li><a href="football_athletix.html">Football</a></li>
+          <li><a href="basketball_athletix.html">Basketball</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SUPPORT</h3>
+        <ul>
+          <li><a href="help.html">Help</a></li>
+          <li><a href="customer.html">Customer Service</a></li>
+          <li><a href="return.html">Returns & Exchanges</a></li>
+          <li><a href="shipping.html">Shipping</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>COMPANY INFO</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="entity.html">Entity Details</a></li>
+        </ul>
+      </div>
+      <div class="footer-column social">
+        <h3>FOLLOW US</h3>
+        <p><a href="https://www.instagram.com" target="_blank">📷 Instagram</a></p>
+        <p><a href="https://www.twitter.com" target="_blank">🐦‍⬛ X</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Privacy Policy | Terms and Conditions | Cookies</p>
+      <p>©2025 ATHLETIX India Marketing Pvt. Ltd</p>
+    </div>
+  </footer>
+  <script src="auth.js"></script>
 </body>
 </html>
