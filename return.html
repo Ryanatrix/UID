@@ -5,7 +5,11 @@
     <link rel="stylesheet" href="main.css">
     <style>
         body {
-            .header {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
             background-color: #000;
             color: #fff;
             padding: 10px 20px;
@@ -54,9 +58,46 @@
             text-decoration: underline;
         }
 
-            font-family: Arial, sans-serif;
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
         }
 
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main-content .text-content {
+            max-width: 30%;
+        }
+
+        .main-content .text-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .main-content .text-content p {
+            font-size: 1.2em;
+        }
+
+        .main-content .text-content a {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .main-content .text-content a:hover {
+            background-color: #ddd;
+        }
         .container {
             padding: 40px 10%;
         }
