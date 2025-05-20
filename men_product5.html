@@ -82,6 +82,7 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
+      color: #000;
     }
 
     .product-container {
@@ -107,6 +108,8 @@
       margin-bottom: 15px;
       cursor: zoom-in;
       transition: transform 0.3s ease;
+      background: #fff;
+      display: block;
     }
 
     .main-image:hover {
@@ -127,6 +130,7 @@
       cursor: pointer;
       border: 2px solid transparent;
       transition: all 0.3s ease;
+      background: #fff;
     }
 
     .thumbnail:hover {
@@ -159,10 +163,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid black;
+      border: 1px solid #000;
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.3s ease;
+      background: #fff;
+      color: #000;
     }
 
     .size-option:hover {
@@ -171,7 +177,7 @@
 
     .size-option.selected {
       background-color: #0056b3;
-      color: white;
+      color: #fff;
       border-color: #0056b3;
     }
 
@@ -182,8 +188,8 @@
     button.add-to-bag {
       width: 200px;
       padding: 15px;
-      background-color: black;
-      color: white;
+      background-color: #000;
+      color: #fff;
       border: none;
       border-radius: 5px;
       font-size: 16px;
@@ -226,8 +232,9 @@
     }
 
     footer {
-      background-color: #000;
+      background-color: #fff;
       text-align: center;
+      color: #000;
     }
 
     .footer-content {
@@ -236,18 +243,20 @@
       padding: 40px 10%;
       text-align: left;
       flex-wrap: wrap;
-      color: #ccc;
+      color: #333;
+      background: #fff;
     }
 
     .footer-column {
       width: 15%;
-      color: #ccc;
+      color: #333;
     }
 
     .footer-column h3 {
       font-size: 14px;
       font-weight: bold;
       margin-bottom: 15px;
+      color: #000;
     }
 
     .footer-column ul {
@@ -262,7 +271,7 @@
     }
 
     .footer-column ul li a {
-      color: #ccc;
+      color: #333;
       text-decoration: none;
     }
 
@@ -275,7 +284,7 @@
     }
 
     .footer-column.social a {
-      color: #ccc;
+      color: #333;
       text-decoration: none;
     }
 
@@ -313,7 +322,7 @@
     }
   </style>
 </head>
-<body style="background-color: white;">
+<body>
   <div class="header">
     <div class="header-left">
       <div class="logo">
@@ -352,9 +361,9 @@
         </div>
       </div>
       <div class="product-details">
-        <h1>Nike Sportswear Tech</h1>
-        <h2> ₹12000</h2>
-        <p><strong>Description:</strong> Step into the future of streetwear with the Nike Sportswear Tech collection — where cutting-edge design meets unmatched comfort. Built for movement and made to turn heads.</p>
+        <h1>Balenciaga Black Crewneck Logo T-shirt</h1>
+        <h2> ₹53500.41</h2>
+        <p><strong>Description:</strong> Minimalist and bold, this black Balenciaga crewneck tee features a relaxed fit and signature logo detail — a modern staple crafted in premium cotton for everyday luxury.</p>
         <div class="size-selector">
           <strong>Select Size:</strong>
           <div class="size-options">
@@ -366,7 +375,7 @@
           </div>
         </div>
         <div class="add-to-bag-container">
-          <button class="add-to-bag" onclick="addToCart(this)" data-id="005" data-name="Nike Sportswear Tech" data-price="12000">
+          <button class="add-to-bag" onclick="addToCart(this)" data-id="005" data-name="Balenciaga Black Crewneck Logo T-shirt" data-price="53500.41">
             Add to Bag
           </button>
         </div>
@@ -424,5 +433,26 @@
     </div>
   </footer>
   <script src="auth.js"></script>
+  <script>
+    // Size selection logic for highlight only (for cart, just use selected class in your cart logic)
+    const sizeOptions = document.querySelectorAll('.size-option');
+    sizeOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        sizeOptions.forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+
+    // Optional: Thumbnail image switcher
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.getElementById('mainImage');
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        thumbnails.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        mainImage.src = this.src;
+      });
+    });
+  </script>
 </body>
 </html>
