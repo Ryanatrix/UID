@@ -82,7 +82,6 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
-      color: #000;
     }
 
     .product-container {
@@ -108,8 +107,6 @@
       margin-bottom: 15px;
       cursor: zoom-in;
       transition: transform 0.3s ease;
-      background: #fff;
-      display: block;
     }
 
     .main-image:hover {
@@ -130,7 +127,6 @@
       cursor: pointer;
       border: 2px solid transparent;
       transition: all 0.3s ease;
-      background: #fff;
     }
 
     .thumbnail:hover {
@@ -163,12 +159,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #000;
+      border: 1px solid black;
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.3s ease;
-      background: #fff;
-      color: #000;
     }
 
     .size-option:hover {
@@ -177,7 +171,7 @@
 
     .size-option.selected {
       background-color: #0056b3;
-      color: #fff;
+      color: white;
       border-color: #0056b3;
     }
 
@@ -188,8 +182,8 @@
     button.add-to-bag {
       width: 200px;
       padding: 15px;
-      background-color: #000;
-      color: #fff;
+      background-color: black;
+      color: white;
       border: none;
       border-radius: 5px;
       font-size: 16px;
@@ -232,9 +226,8 @@
     }
 
     footer {
-      background-color: #fff;
+      background-color: #000;
       text-align: center;
-      color: #000;
     }
 
     .footer-content {
@@ -243,20 +236,18 @@
       padding: 40px 10%;
       text-align: left;
       flex-wrap: wrap;
-      color: #333;
-      background: #fff;
+      color: #ccc;
     }
 
     .footer-column {
       width: 15%;
-      color: #333;
+      color: #ccc;
     }
 
     .footer-column h3 {
       font-size: 14px;
       font-weight: bold;
       margin-bottom: 15px;
-      color: #000;
     }
 
     .footer-column ul {
@@ -271,7 +262,7 @@
     }
 
     .footer-column ul li a {
-      color: #333;
+      color: #ccc;
       text-decoration: none;
     }
 
@@ -284,7 +275,7 @@
     }
 
     .footer-column.social a {
-      color: #333;
+      color: #ccc;
       text-decoration: none;
     }
 
@@ -322,7 +313,7 @@
     }
   </style>
 </head>
-<body>
+<body style="background-color: white;">
   <div class="header">
     <div class="header-left">
       <div class="logo">
@@ -375,7 +366,7 @@
           </div>
         </div>
         <div class="add-to-bag-container">
-          <button class="add-to-bag" data-id="005" data-name="Balenciaga Black Crewneck Logo T-shirt" data-price="53500.41">
+          <button class="add-to-bag" onclick="addToCart(this)" data-id="005" data-name="Balenciaga Black Crewneck Logo T-shirt" data-price="53500.41">
             Add to Bag
           </button>
         </div>
