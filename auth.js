@@ -5,9 +5,6 @@ window.onload = function () {
   if (currentUser) {
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     const user = users.find(u => u.email === currentUser);
-    if (user) {
-      alert("Welcome back, " + user.name + "!");
-    }
   }
 };
 
