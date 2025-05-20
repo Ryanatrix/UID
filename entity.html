@@ -5,9 +5,98 @@
     <link rel="stylesheet" href="main.css">
     <style>
         body {
-            font-family: "Segoe UI", sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 550px;
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            font-size: 1.3em;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            align-items: center;
+        }
+
+        .help-signup {
+            display: flex;
+            gap: 20px;
+            font-size: 1.3em;
+        }
+
+        .help-signup a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .help-signup a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main-content .text-content {
+            max-width: 30%;
+        }
+
+        .main-content .text-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .main-content .text-content p {
+            font-size: 1.2em;
+        }
+
+        .main-content .text-content a {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .main-content .text-content a:hover {
+            background-color: #ddd;
         }
 
         .container {
