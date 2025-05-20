@@ -1,5 +1,3 @@
-// --- Existing code (login/signup/image/size selection etc) ---
-
 window.onload = function () {
   const currentUser = localStorage.getItem("currentUser");
   if (currentUser) {
@@ -52,7 +50,7 @@ function logIn() {
   if (user) {
     localStorage.setItem("currentUser", user.email);
     alert("Login successful! Welcome back, " + user.name + "!");
-    window.location.href = "homepage.html"; // <--- Redirect here
+    window.location.href = "homepage.html";
   } else {
     alert("Invalid email or password.");
   }
@@ -75,9 +73,6 @@ function selectSize(element) {
   element.classList.add('selected');
   selectedSize = element.textContent.trim();
 }
-
-// --- Add to Cart (used on product page) ---
-// Now stores cart per user!
 function addToCart(button) {
   const currentUser = localStorage.getItem("currentUser");
   if (!currentUser) {
@@ -114,14 +109,10 @@ function addToCart(button) {
   localStorage.setItem('userCarts', JSON.stringify(userCarts));
   alert(`Added to bag: ${product.name} (Size ${selectedSize})`);
 }
-
-// --- Display Cart (used on cart page) ---
-// Only displays cart for the logged in user!
 function displayCart() {
   const cartContainer = document.getElementById('cart-container');
   if (!cartContainer) return;
 
-  // Make the table much closer to the page edge
   cartContainer.style.padding = '0 2px';
   cartContainer.style.maxWidth = '1000px';
   cartContainer.style.margin = '0 auto';
@@ -135,14 +126,12 @@ function displayCart() {
 
   let userCarts = JSON.parse(localStorage.getItem('userCarts') || "{}");
   let cart = userCarts[currentUser] || [];
-  cartContainer.innerHTML = ''; // Clear previous contents
+  cartContainer.innerHTML = ''; 
 
   if (cart.length === 0) {
     cartContainer.innerHTML = '<p style="text-align: center;">Your cart is empty.</p>';
     return;
   }
-
-  // Create a wrapper to center the table
   const wrapper = document.createElement('div');
   wrapper.style.justifyContent = 'center';
   wrapper.style.margin = '32px 0';
@@ -154,7 +143,7 @@ function displayCart() {
   cartTable.style.background = '#fff';
   cartTable.style.borderRadius = '14px';
   cartTable.style.overflow = 'hidden';
-  cartTable.style.margin = '0'; // Let the wrapper handle centering
+  cartTable.style.margin = '0'; 
 
   cartTable.innerHTML = `
     <thead>
@@ -192,7 +181,6 @@ function displayCart() {
   wrapper.appendChild(cartTable);
   cartContainer.appendChild(wrapper);
 
-  // Total price
   const totalDiv = document.createElement('div');
   totalDiv.className = 'cart-total';
   totalDiv.style.textAlign = 'center';
@@ -201,7 +189,7 @@ function displayCart() {
   totalDiv.innerHTML = `<strong>Total: ₹${totalPrice.toFixed(2)}</strong>`;
   cartContainer.appendChild(totalDiv);
 }
-// Function to append user's cart items to cartStack (for undo, etc.)
+
 function appendCartToStack() {
   const currentUser = localStorage.getItem("currentUser");
   if (!currentUser) {
@@ -211,7 +199,7 @@ function appendCartToStack() {
 
   let userCarts = JSON.parse(localStorage.getItem('userCarts') || "{}");
 
-  // Load previous stack if it exists
+
   let prevStack = [];
   const stackKey = 'cartStack_' + currentUser;
   const savedStack = localStorage.getItem(stackKey);
@@ -219,21 +207,16 @@ function appendCartToStack() {
     prevStack = JSON.parse(savedStack);
   }
 
-  // Get current cart items
   let currentCart = [];
   if (userCarts[currentUser] && Array.isArray(userCarts[currentUser])) {
     currentCart = userCarts[currentUser];
   }
 
-  // Append new items to previous stack (you can choose to push or unshift based on your stack logic)
-  // Here, we add the current cart items to the end of the stack array.
   const newStack = prevStack.concat(currentCart);
 
-  // Save the updated stack
   localStorage.setItem(stackKey, JSON.stringify(newStack));
 }
 
-// Function to empty the user's cart
 function emptyUserCart() {
   const currentUser = localStorage.getItem("currentUser");
   if (!currentUser) {
@@ -250,10 +233,6 @@ function emptyUserCart() {
   }
   alert("Your cart has been emptied.");
 }
-/**
- * Removes the top (last added) element from the cart of the currently logged-in user.
- * If the cart is empty or no user is logged in, it shows an alert.
- */
 function popTopCartItem() {
   const currentUser = localStorage.getItem("currentUser");
   if (!currentUser) {
@@ -269,11 +248,10 @@ function popTopCartItem() {
     return;
   }
 
-  cart.pop(); // Remove the last item added
+  cart.pop();
   userCarts[currentUser] = cart;
   localStorage.setItem('userCarts', JSON.stringify(userCarts));
 
-  // Optionally update the cart display
   if (typeof displayCart === "function") {
     displayCart();
   }
@@ -283,7 +261,6 @@ function displayCartStack() {
   const cartContainer = document.getElementById('cart-container');
   if (!cartContainer) return;
 
-  // Make the table much closer to the page edge
   cartContainer.style.padding = '0 2px';
   cartContainer.style.maxWidth = '1000px';
   cartContainer.style.margin = '0 auto';
@@ -294,30 +271,25 @@ function displayCartStack() {
     cartContainer.innerHTML = '<p>Please log in to view your cart.</p>';
     return;
   }
-
-  // Read cartStack from localStorage
   let cartStack = [];
-  // Try to get the stack as saved by emptyCart
   const cartStackKey = 'cartStack_' + currentUser;
   const stackFromStorage = localStorage.getItem(cartStackKey);
   if (stackFromStorage) {
     cartStack = JSON.parse(stackFromStorage);
   } else {
-    // Fallback: try userCarts[currentUser].cartStack 
     let userCarts = JSON.parse(localStorage.getItem('userCarts') || "{}");
     if (userCarts[currentUser]?.cartStack && Array.isArray(userCarts[currentUser].cartStack)) {
       cartStack = userCarts[currentUser].cartStack;
     }
   }
 
-  cartContainer.innerHTML = ''; // Clear previous contents
+  cartContainer.innerHTML = ''; 
 
   if (!cartStack || cartStack.length === 0) {
     cartContainer.innerHTML = '<p style="text-align: center;">No Orders so far.</p>';
     return;
   }
 
-  // Create a wrapper to center the table
   const wrapper = document.createElement('div');
   wrapper.style.justifyContent = 'center';
   wrapper.style.margin = '32px 0';
@@ -329,7 +301,7 @@ function displayCartStack() {
   cartTable.style.background = '#fff';
   cartTable.style.borderRadius = '14px';
   cartTable.style.overflow = 'hidden';
-  cartTable.style.margin = '0'; // Let the wrapper handle centering
+  cartTable.style.margin = '0'; 
 
   cartTable.innerHTML = `
     <thead>
