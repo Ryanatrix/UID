@@ -4,9 +4,14 @@
     <title>About Us | Athletix</title>
     <link rel="stylesheet" href="main.css">
     <style>
-        html,body {
+        * {
+            font-family: Arial, sans-serif;
+       }
+ 
+       body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color:white;
         }
 
         .header {
@@ -58,11 +63,12 @@
             text-decoration: underline;
         }
 
+
         .main-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #000;
+            background-color: white;
             color: #fff;
             padding: 20px;
         }
@@ -89,14 +95,21 @@
             display: inline-block;
             margin: 10px 5px;
             padding: 10px 20px;
-            background-color: #fff;
-            color: #000;
+            background-color: #000;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
         }
 
         .main-content .text-content a:hover {
-            background-color: #ddd;
+            background-color: #000;
+        }
+
+
+        .main-content h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 30px;
         }
 
         .container {
@@ -138,6 +151,9 @@
         }
      
         footer {
+            background-color: #000;
+            text-align: center;
+        }
             .promo-banner {
             background-color: #F7E146;
             color: #000;
